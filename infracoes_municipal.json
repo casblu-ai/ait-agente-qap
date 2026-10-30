@@ -1,0 +1,329 @@
+[
+  {
+    "id": "art181I",
+    "codigo": "538-00",
+    "artigo": "Art. 181, I",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo nas esquinas e a menos de 5 metros do bordo do alinhamento da via transversal",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Permitida a autuação com condutor ausente)",
+    "obsObrigatoria": "Descrever a posição do veículo referente à esquina e a distância aproximada ou medida até a via transversal.",
+    "modelosObs": [
+      "Veículo estacionado a menos de 5 metros da esquina da via transversal [NOME DA RUA], com o condutor ausente no momento da fiscalização."
+    ]
+  },
+  {
+    "id": "art181II",
+    "codigo": "539-80",
+    "artigo": "Art. 181, II",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo afastado da guia da calçada (meio-fio) de cinquenta centímetros a um metro",
+    "gravidade": "Leve",
+    "pontos": 3,
+    "valor": "R$ 88,38",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Constatação visual direta da distância em relação ao meio-fio)",
+    "obsObrigatoria": "Informar a distância aproximada de afastamento da guia da calçada.",
+    "modelosObs": [
+      "Veículo estacionado paralelamente à via, porém afastado da guia da calçada (meio-fio) a uma distância aproximada de [60] cm."
+    ]
+  },
+  {
+    "id": "art181III",
+    "codigo": "540-10",
+    "artigo": "Art. 181, III",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo afastado da guia da calçada (meio-fio) a mais de um metro",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Constatação visual direta do veículo no leito da via)",
+    "obsObrigatoria": "Informar que o veículo se encontrava a mais de 1 metro de distância do meio-fio.",
+    "modelosObs": [
+      "Veículo estacionado no leito da via pública, afastado a mais de 1 metro da guia da calçada (meio-fio), gerando risco à circulação."
+    ]
+  },
+  {
+    "id": "art181IV",
+    "codigo": "541-00",
+    "artigo": "Art. 181, IV",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo em desacordo com as posições estabelecidas no CTB (em fila dupla / em ângulo não permitido)",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Constatação visual da disposição do veículo na via)",
+    "obsObrigatoria": "Especificar se o veículo estava em posição diagonal/perpendicular não regulamentada.",
+    "modelosObs": [
+      "Veículo estacionado em ângulo/perpendicularmente em local onde o estacionamento é regulamentado apenas paralelamente ao meio-fio."
+    ]
+  },
+  {
+    "id": "art181V",
+    "codigo": "542-80",
+    "artigo": "Art. 181, V",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo junto ou sobre hidrantes de incêndio, registos de água ou tampas de poços de visita",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Veículo obstaculizando equipamento público sinalizado)",
+    "obsObrigatoria": "Mencionar a existência do hidrante/tampa devidamente identificado e o bloqueio efetuado pelo veículo.",
+    "modelosObs": [
+      "Veículo estacionado diretamente sobre a tampa do poço de visita / junto ao hidrante de incêndio devidamente sinalizado com pintura amarela."
+    ]
+  },
+  {
+    "id": "art181VI",
+    "codigo": "543-60",
+    "artigo": "Art. 181, VI",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo nos acostamentos",
+    "gravidade": "Leve",
+    "pontos": 3,
+    "valor": "R$ 88,38",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Sem motivo de força maior/avaria)",
+    "obsObrigatoria": "Mencionar que o veículo estava imobilizado no acostamento sem sinalização de emergência ou motivo de avaria.",
+    "modelosObs": [
+      "Veículo estacionado no acostamento da via sem apresentar triângulo de sinalização ou pisca-alerta ligado, estando o condutor ausente."
+    ]
+  },
+  {
+    "id": "art181VII",
+    "codigo": "544-40",
+    "artigo": "Art. 181, VII",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo em viadutos, pontes e túneis",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Local de proibição absoluta)",
+    "obsObrigatoria": "Especificar a localização exata sobre a estrutura (ponte, viaduto ou interior de túnel).",
+    "modelosObs": [
+      "Veículo estacionado sobre a estrutura do viaduto/ponte [NOME], prejudicando a fluidez do tráfego local."
+    ]
+  },
+  {
+    "id": "art181VIII",
+    "codigo": "545-21",
+    "artigo": "Art. 181, VIII",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar no passeio (calçada), faixa de pedestres, ciclovia ou ciclofaixa",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Constatação visual do local de estacionamento)",
+    "obsObrigatoria": "Especificar se o veículo estava no passeio, na faixa de pedestres ou na ciclovia, e se obstaculizava a passagem.",
+    "modelosObs": [
+      "OPÇÃO 1 (PASSEIO / CALÇADA): Veículo estacionado sobre o passeio público (calçada), com as quatro rodas sobre a área destinada aos pedestres, defronte ao imóvel nº [Nº].",
+      "OPÇÃO 2 (FAIXA DE PEDESTRES): Veículo estacionado sobre a faixa de travessia de pedestres sinalizada na via.",
+      "OPÇÃO 3 (CICLOVIA / CICLOFAIXA): Veículo estacionado sobre a ciclovia/ciclofaixa destinada à circulação exclusiva de bicicletas."
+    ]
+  },
+  {
+    "id": "art181IX",
+    "codigo": "546-00",
+    "artigo": "Art. 181, IX",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo ao lado de outro veículo em fila dupla",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Permitida autuação sem abordagem)",
+    "obsObrigatoria": "Informar a placa do veículo que estava devidamente estacionado ao lado do qual o infrator parou em fila dupla.",
+    "modelosObs": [
+      "Veículo estacionado em fila dupla ao lado do veículo placa [PLACA DO VEÍCULO ESTACIONADO], bloqueando parcialmente a faixa de rolamento."
+    ]
+  },
+  {
+    "id": "art181X",
+    "codigo": "547-90",
+    "artigo": "Art. 181, X",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo impedindo a movimentação de outro veículo",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Bloqueio direto de veículo estacionado)",
+    "obsObrigatoria": "Identificar a placa do veículo cujo deslocamento foi totalmente impedido.",
+    "modelosObs": [
+      "Veículo estacionado bloqueando a saída do veículo placa [PLACA DO VEÍCULO BLOQUEADO], impedindo a sua movimentação na via pública."
+    ]
+  },
+  {
+    "id": "art181XI",
+    "codigo": "548-70",
+    "artigo": "Art. 181, XI",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo ao lado ou sobre canteiro central, divisores de pista de rolamento, marcas de canalização",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Constatação visual na marcação viária)",
+    "obsObrigatoria": "Mencionar se o veículo estava sobre o canteiro central ou sobre a pintura de marca de canalização (zebrado).",
+    "modelosObs": [
+      "Veículo estacionado sobre as marcas de canalização (área zebrada) pintadas no pavimento da via pública."
+    ]
+  },
+  {
+    "id": "art181XII",
+    "codigo": "549-50",
+    "artigo": "Art. 181, XII",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo em local/horário de parada e estacionamento proibidos pela sinalização (Placa R-6c)",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Sinalização R-6c visível)",
+    "obsObrigatoria": "Confirmar a presença da placa R-6c (Proibido Parar e Estacionar) no trecho fiscalizado.",
+    "modelosObs": [
+      "Veículo estacionado em trecho devidamente sinalizado com a placa R-6c (Proibido Parar e Estacionar)."
+    ]
+  },
+  {
+    "id": "art181XVII",
+    "codigo": "554-12",
+    "artigo": "Art. 181, XVII",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar em desacordo com as condições regulamentadas pela sinalização (Estacionamento Regulamentado / Zona Azul)",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Ausência de comprovante ou tempo excedido)",
+    "obsObrigatoria": "Informar a sinalização existente R-6b e a ausência do ticket/comprovante ou tempo limite ultrapassado.",
+    "modelosObs": [
+      "Veículo estacionado em vaga de Estacionamento Regulamentado (Zona Azul) sem a ativação/exibição do comprovante válido ou com o tempo regulamentar excedido."
+    ]
+  },
+  {
+    "id": "art181XVIII",
+    "codigo": "555-00",
+    "artigo": "Art. 181, XVIII",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo em local/horário proibido especificamente pela sinalização (Placa R-6a)",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Sinalização R-6a visível)",
+    "obsObrigatoria": "Informar a presença da placa R-6a (Proibido Estacionar) e a ausência do condutor.",
+    "modelosObs": [
+      "Veículo estacionado em local sinalizado com placa R-6a (Proibido Estacionar), estando o condutor ausente."
+    ]
+  },
+  {
+    "id": "art181XX",
+    "codigo": "556-80",
+    "artigo": "Art. 181, XX",
+    "competencia": "Municipal",
+    "categoria": "ESTACIONAMENTO",
+    "titulo": "Estacionar o veículo nas vagas reservadas às pessoas com deficiência ou idosos sem credencial",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo",
+    "semAbordagem": "SIM (Ausência da credencial visível no painel)",
+    "obsObrigatoria": "Especificar se a vaga era destinada a Idoso ou PCD e a ausência do cartão de credencial obrigatório no painel do veículo.",
+    "modelosObs": [
+      "OPÇÃO 1 (VAGA IDOSO): Veículo estacionado na vaga reservada a Idosos (sinalização R-6b com legenda no pavimento), sem exibir o Cartão Credencial de Idoso sobre o painel.",
+      "OPÇÃO 2 (VAGA PCD): Veículo estacionado na vaga reservada à Pessoa com Deficiência (PCD), sem exibir a credencial obrigatória emitida pelo órgão de trânsito."
+    ]
+  },
+  {
+    "id": "art193",
+    "codigo": "581-90",
+    "artigo": "Art. 193",
+    "competencia": "Municipal",
+    "categoria": "CIRCULACAO",
+    "titulo": "Transitar com o veículo em calçadas, passeios, canteiros centrais, ciclovias ou marcas de canalização",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x",
+    "infrator": "Condutor",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Permitida autuação sem abordagem se constatada a transposição em movimento)",
+    "obsObrigatoria": "Especificar exatamente o local onde o veículo transitava (ex: sobre o passeio público para atalho ou fuga de trânsito).",
+    "modelosObs": [
+      "Veículo transitava com as quatro rodas sobre o passeio público (calçada), utilizando a área de circulação de pedestres como via de tráfego."
+    ]
+  },
+  {
+    "id": "art208",
+    "codigo": "605-01",
+    "artigo": "Art. 208",
+    "competencia": "Municipal",
+    "categoria": "CIRCULACAO",
+    "titulo": "Avançar o sinal vermelho do semáforo ou o de parada obrigatória (Placa R-1)",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Visualização direta do agente ou fiscalização eletrônica)",
+    "obsObrigatoria": "Informar o sentido da via e a transposição da fase vermelha do semáforo ou desrespeito à placa R-1.",
+    "modelosObs": [
+      "OPÇÃO 1 (SINAL VERMELHO): Autuação sem abordagem. Veículo transitava no sentido [BAIRRO/CENTRO] e transcreveu o cruzamento durante a fase vermelha do semáforo.",
+      "OPÇÃO 2 (PLACA R-1): Veículo ultrapassou a sinalização vertical de parada obrigatória (Placa R-1) sem realizar a imobilização completa no cruzamento."
+    ]
+  }
+]
