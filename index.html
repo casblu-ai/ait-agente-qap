@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AIT Agente - Sistema de Fiscalização</title>
+    <title>AIT Agente - Guia de Fiscalização de Trânsito</title>
 
     <!-- PWA Web App Manifest dinâmico -->
     <script>
         const manifestData = {
-            "name": "AIT Agente - Fiscalização de Trânsito",
+            "name": "AIT Agente - Guia de Fiscalização",
             "short_name": "AIT Agente",
             "start_url": "./",
             "display": "standalone",
@@ -72,9 +72,9 @@
     <header class="sticky top-0 z-40 bg-police-900 text-white shadow-md border-b border-police-gold/30">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="bg-police-gold text-police-900 font-black px-2 py-1 rounded text-xs tracking-wider">OFFLINE READY</div>
-                <h1 class="text-lg font-bold tracking-wide flex items-center gap-2">
-                    <i class="fa-solid font-bold fa-shield-halved text-police-gold"></i> AIT AGENTE
+                <div class="bg-police-gold text-police-900 font-black px-2 py-1 rounded text-[10px] tracking-wider uppercase">Consulta em Campo</div>
+                <h1 class="text-base font-bold tracking-wide flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-police-gold"></i> AIT AGENTE
                 </h1>
             </div>
             
@@ -90,20 +90,22 @@
         </div>
     </header>
 
-    <!-- Sub-header com Navegação de Abas -->
+    <!-- Aviso do Sistema -->
+    <div class="bg-amber-500/10 border-b border-amber-500/30 px-4 py-2 text-center text-[11px] text-amber-600 dark:text-amber-400 font-medium">
+        <i class="fa-solid fa-circle-info mr-1"></i> Ferramenta de apoio para consulta de enquadramentos do MBFT. O AIT oficial deve ser lavrado no sistema do órgão autuador.
+    </div>
+
+    <!-- Navegação de Abas -->
     <nav class="bg-police-800 border-b border-slate-700 text-slate-300 text-xs font-semibold sticky top-[57px] z-30">
         <div class="max-w-4xl mx-auto flex justify-around">
             <button onclick="switchTab('tab-search')" id="btn-tab-search" class="tab-btn py-3 px-2 border-b-2 border-police-gold text-police-gold flex items-center gap-1.5 flex-1 justify-center">
-                <i class="fa-solid fa-magnifying-glass"></i> Enquadramentos
-            </button>
-            <button onclick="switchTab('tab-radar')" id="btn-tab-radar" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center">
-                <i class="fa-solid fa-gauge-high"></i> Calc. Radar
+                <i class="fa-solid fa-book-bookmark"></i> Enquadramentos MBFT
             </button>
             <button onclick="switchTab('tab-ait')" id="btn-tab-ait" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center">
-                <i class="fa-solid fa-file-pen"></i> Rascunho AIT
+                <i class="fa-solid fa-file-pen"></i> Rascunho / Minuta
             </button>
             <button onclick="switchTab('tab-drafts')" id="btn-tab-drafts" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center relative">
-                <i class="fa-solid fa-folder-closed"></i> Salvos
+                <i class="fa-solid fa-folder-closed"></i> Rascunhos Salvos
                 <span id="draftCountBadge" class="bg-police-gold text-police-900 text-[10px] px-1.5 py-0.2 rounded-full font-bold ml-0.5 hidden">0</span>
             </button>
         </div>
@@ -112,93 +114,62 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-4xl w-full mx-auto p-4 space-y-4">
 
-        <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS CTB -->
+        <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS MBFT -->
         <section id="tab-search" class="tab-content space-y-4">
             <div class="space-y-2">
                 <div class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo ou palavra-chave (ex: celular, capacete, 165)..."
+                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, característica, celular..."
                         class="w-full pl-10 pr-10 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-police-gold text-sm">
                     <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                         <i class="fa-solid fa-circle-xmark text-lg"></i>
                     </button>
                 </div>
 
-                <!-- Filtros Rápido de Categoria -->
+                <!-- Filtros Rápidos -->
                 <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
                     <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-police-gold text-police-900 font-bold whitespace-nowrap shadow-sm">Todos</button>
                     <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Alcoolemia</button>
                     <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">CNH / Condutor</button>
-                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Veículo / Licenciam.</button>
-                    <button onclick="filterCategory('VELOCIDADE')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Velocidade</button>
+                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Veículo / Alterações</button>
+                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Estacionamento</button>
                     <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> Favoritos</button>
                 </div>
             </div>
 
-            <!-- Lista de Resultados de Infrações -->
+            <!-- Lista de Resultados -->
             <div id="infractionsList" class="space-y-3">
-                <!-- Injetado dinamicamente via JS -->
+                <!-- Injetado via JS -->
             </div>
         </section>
 
-        <!-- ABA 2: CALCULADORA DE RADAR (CONTRAN) -->
-        <section id="tab-radar" class="tab-content hidden space-y-4">
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
-                <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-700 pb-2">
-                    <i class="fa-solid fa-gauge-high text-police-gold text-xl"></i>
-                    <h2 class="font-bold text-base">Cálculo de Velocidade Considerada (CONTRAN)</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold mb-1">Velocidade Regulamentada da Via (km/h)</label>
-                        <input type="number" id="radarLimit" placeholder="Ex: 60" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold mb-1">Velocidade Medida pelo Radar (km/h)</label>
-                        <input type="number" id="radarMeasured" placeholder="Ex: 78" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm">
-                    </div>
-                </div>
-
-                <button onclick="calculateSpeed()" class="w-full py-3 bg-police-gold hover:bg-police-goldhover text-police-900 font-bold rounded-lg shadow transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-calculator"></i> Calcular Excesso de Velocidade
-                </button>
-
-                <!-- Resultado do Cálculo -->
-                <div id="radarResult" class="hidden p-4 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 space-y-2">
-                    <!-- Injetado via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ABA 3: GERADOR DE RASCUNHO DE AIT (COM OCR) -->
+        <!-- ABA 2: GERADOR DE RASCUNHO / MINUTA DE AIT -->
         <section id="tab-ait" class="tab-content hidden space-y-4">
             <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
                 <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
                     <div class="flex items-center gap-2">
                         <i class="fa-solid fa-file-pen text-police-gold text-xl"></i>
-                        <h2 class="font-bold text-base">Gerador de Rascunho de Auto de Infração</h2>
+                        <h2 class="font-bold text-base">Preparar Minuta / Rascunho para o Sistema Oficial</h2>
                     </div>
                     <button onclick="clearAITForm()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-can"></i> Limpar</button>
                 </div>
 
                 <form id="aitForm" class="space-y-3" onsubmit="event.preventDefault();">
                     
-                    <!-- Scanner OCR de Placa / Documento -->
+                    <!-- Scanner OCR de Placa -->
                     <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-dashed border-police-gold/50 space-y-2">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-bold text-police-gold flex items-center gap-1.5">
-                                <i class="fa-solid fa-camera"></i> Escanear Placa ou Documento (OCR)
+                                <i class="fa-solid fa-camera"></i> Escanear Placa do Veículo (OCR)
                             </span>
                         </div>
                         <div class="flex items-center gap-2">
                             <label class="flex-1 cursor-pointer bg-police-800 hover:bg-police-900 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow transition">
-                                <i class="fa-solid fa-camera-retro"></i> Capturar / Carregar Imagem
+                                <i class="fa-solid fa-camera-retro"></i> Capturar Fotografia
                                 <input type="file" id="ocrInput" accept="image/*" capture="environment" class="hidden" onchange="processOCRImage(this)">
                             </label>
                         </div>
                         
-                        <!-- Barra de Progresso OCR -->
                         <div id="ocrProgress" class="hidden space-y-1">
                             <div class="flex justify-between text-[10px] text-slate-400">
                                 <span id="ocrStatusText">Reconhecendo texto...</span>
@@ -215,28 +186,17 @@
                     <div class="grid grid-cols-2 gap-3">
                         <div>
                             <label class="block text-xs font-semibold mb-1">Placa do Veículo *</label>
-                            <input type="text" id="aitPlaca" placeholder="ABC1D23 ou ABC1234" uppercase class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                            <input type="text" id="aitPlaca" placeholder="ABC1D23" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold mb-1">UF do Veículo</label>
-                            <input type="text" id="aitUf" placeholder="Ex: RO, SP, MG" maxlength="2" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Marca / Modelo</label>
-                            <input type="text" id="aitModelo" placeholder="Ex: VW GOL" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold mb-1">Cor</label>
-                            <input type="text" id="aitCor" placeholder="Ex: PRATA" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                            <input type="text" id="aitUf" placeholder="Ex: RO, SP" maxlength="2" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Local da Infração (Rua/Av/KM) *</label>
-                        <input type="text" id="aitLocal" placeholder="Ex: Av. Jorge Teixeira, nº 1500" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
+                        <label class="block text-xs font-semibold mb-1">Local da Infração (Rua/Av/Nº) *</label>
+                        <input type="text" id="aitLocal" placeholder="Ex: Av. Jorge Teixeira, nº 1200" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
                     </div>
 
                     <div>
@@ -246,28 +206,36 @@
                         </select>
                     </div>
 
+                    <!-- Seletor de Minutas / Versões de Observação -->
+                    <div id="modelObsContainer" class="hidden space-y-1">
+                        <label class="block text-xs font-bold text-police-gold"><i class="fa-solid fa-list-check"></i> Selecione o Modelo / Versão de Observação:</label>
+                        <select id="aitObsModelSelect" onchange="applyObsModel()" class="w-full p-2 bg-amber-500/10 border border-amber-500/40 text-amber-700 dark:text-amber-300 rounded text-xs">
+                            <option value="">-- Escolha a versão de enquadramento --</option>
+                        </select>
+                    </div>
+
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Observações do Agente / Campo OBRIGATÓRIO do AIT</label>
-                        <textarea id="aitObs" rows="3" placeholder="Insira aqui as observações específicas exigidas pela legislação para este enquadramento..." class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm"></textarea>
+                        <label class="block text-xs font-semibold mb-1">Campo de Observações do AIT (Pronto para copiar)</label>
+                        <textarea id="aitObs" rows="4" placeholder="O texto preenchido aqui servirá de minuta para colagem no sistema de autuação do órgão..." class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm font-mono"></textarea>
                     </div>
 
                     <div class="flex gap-2 pt-2">
+                        <button type="button" onclick="copyObsText()" class="flex-1 py-2.5 bg-police-gold hover:bg-police-goldhover text-police-900 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
+                            <i class="fa-solid fa-copy"></i> Copiar Observação
+                        </button>
                         <button type="button" onclick="saveAITDraft()" class="flex-1 py-2.5 bg-police-800 hover:bg-police-900 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
                             <i class="fa-solid fa-floppy-disk"></i> Salvar Rascunho
-                        </button>
-                        <button type="button" onclick="generateThermalReceipt()" class="flex-1 py-2.5 bg-police-gold hover:bg-police-goldhover text-police-900 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
-                            <i class="fa-solid fa-print"></i> Gerar Impressão
                         </button>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- ABA 4: HISTÓRICO DE RASCUNHOS SALVOS -->
+        <!-- ABA 3: RASCUNHOS SALVOS -->
         <section id="tab-drafts" class="tab-content hidden space-y-4">
             <div class="flex justify-between items-center">
                 <h2 class="font-bold text-base flex items-center gap-2">
-                    <i class="fa-solid fa-folder-open text-police-gold"></i> Rascunhos de AIT Salvos
+                    <i class="fa-solid fa-folder-open text-police-gold"></i> Rascunhos de Minutas Salvos
                 </h2>
                 <button onclick="clearAllDrafts()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-arrow-up"></i> Excluir Todos</button>
             </div>
@@ -279,229 +247,47 @@
 
     </main>
 
-    <!-- MODAL DE COMPROVANTE DE IMPRESSÃO TÉRMICA -->
-    <div id="receiptModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-white text-black p-4 rounded-xl max-w-sm w-full space-y-4 max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center border-b pb-2">
-                <span class="font-bold text-xs uppercase tracking-wide">Comprovante do AIT (Impressão)</span>
-                <button onclick="closeReceiptModal()" class="text-slate-500 hover:text-black"><i class="fa-solid fa-xmark text-lg"></i></button>
-            </div>
-
-            <!-- Área Impressa do Talão Térmico -->
-            <div id="receiptPrintArea" class="font-mono text-[11px] leading-tight space-y-2 border p-3 bg-amber-50/30">
-                <div class="text-center border-b border-dashed pb-2">
-                    <p class="font-bold">ÓRGÃO DE TRÂNSITO</p>
-                    <p>NOTIFICAÇÃO DE FISCALIZAÇÃO</p>
-                    <p id="receiptDate" class="text-[10px] text-slate-600"></p>
-                </div>
-
-                <div class="space-y-1">
-                    <p><strong>PLACA:</strong> <span id="rPlaca"></span> | <strong>UF:</strong> <span id="rUf"></span></p>
-                    <p><strong>VEÍCULO:</strong> <span id="rModelo"></span></p>
-                    <p><strong>COR:</strong> <span id="rCor"></span></p>
-                    <p><strong>LOCAL:</strong> <span id="rLocal"></span></p>
-                </div>
-
-                <div class="border-t border-dashed pt-1 space-y-1">
-                    <p><strong>INFRACÃO:</strong> <span id="rCodigo"></span></p>
-                    <p><strong>ARTIGO:</strong> <span id="rArtigo"></span></p>
-                    <p><strong>GRAVIDADE:</strong> <span id="rGravidade"></span></p>
-                    <p><strong>DESCRICAO:</strong> <span id="rDesc"></span></p>
-                </div>
-
-                <div class="border-t border-dashed pt-1 space-y-1">
-                    <p><strong>OBSERVACOES DA AUTUACAO:</strong></p>
-                    <p id="rObs" class="italic break-words"></p>
-                </div>
-
-                <div class="border-t border-dashed pt-2 text-center text-[10px]">
-                    <p>SISTEMA AIT AGENTE</p>
-                    <p>DOCUMENTO DE CONSULTA EM CAMPO</p>
-                </div>
-            </div>
-
-            <div class="flex gap-2 pt-2">
-                <button onclick="window.print()" class="flex-1 py-2 bg-police-800 text-white font-bold rounded text-xs flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-print"></i> Imprimir
-                </button>
-                <button onclick="copyReceiptText()" class="flex-1 py-2 bg-slate-200 text-slate-800 font-bold rounded text-xs flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-copy"></i> Copiar Texto
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- BANCO DE DADOS DE INFRAÇÕES (CTB) E LÓGICA DO APP -->
+    <!-- SCRIPTS E LÓGICA DO SISTEMA -->
     <script>
-        const database = [
-            {
-                id: "165",
-                codigo: "757-90",
-                artigo: "Art. 165",
-                categoria: "ALCOOLEMIA",
-                titulo: "Dirigir sob a influência de álcool ou substância psicoativa",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 2.934,70",
-                fator: "10x",
-                infrator: "Condutor",
-                medida: "Recolhimento da CNH e Retenção do veículo",
-                constatacao: "Teste de etilômetro, exame clínico ou termo de constatação de sinais de alteração da capacidade psicomotora.",
-                obsObrigatoria: "Obrigatório registrar o número do teste/recolhimento, número do etilômetro, valor medido (mg/L) ou detalhar os sinais de embriaguez."
-            },
-            {
-                id: "165A",
-                codigo: "758-70",
-                artigo: "Art. 165-A",
-                categoria: "ALCOOLEMIA",
-                titulo: "Recusar-se a ser submetido a teste, exame clínico ou perícia de alcoolemia",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 2.934,70",
-                fator: "10x",
-                infrator: "Condutor",
-                medida: "Recolhimento da CNH e Retenção do veículo",
-                constatacao: "Recusa formal do condutor em realizar o procedimento oferecido pelo agente.",
-                obsObrigatoria: "Descrever detalhadamente a oferta do teste, o modelo/número do etilômetro oferecido e a recusa expressa ou verbal do condutor."
-            },
-            {
-                id: "162I",
-                codigo: "501-00",
-                artigo: "Art. 162, I",
-                categoria: "CONDUTOR",
-                titulo: "Dirigir veículo sem possuir CNH, Permissão para Dirigir ou ACC",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 880,41",
-                fator: "3x",
-                infrator: "Condutor / Proprietário",
-                medida: "Retenção do veículo até a apresentação de condutor habilitado",
-                constatacao: "Consulta aos sistemas oficiais (SENATRAN/DETRAN).",
-                obsObrigatoria: "Informar se o condutor declarou não possuir habilitação e o resultado da consulta ao sistema."
-            },
-            {
-                id: "162II",
-                codigo: "502-30",
-                artigo: "Art. 162, II",
-                categoria: "CONDUTOR",
-                titulo: "Dirigir veículo com CNH/PPD cassada ou com direito de dirigir suspenso",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 880,41",
-                fator: "3x",
-                infrator: "Condutor",
-                medida: "Recolhimento do documento de habilitação e Retenção do veículo",
-                constatacao: "Consulta ao sistema com bloqueio ou suspensão ativa.",
-                obsObrigatoria: "Indicar o número do processo administrativo de suspensão/cassação constante na consulta do sistema."
-            },
-            {
-                id: "230V",
-                codigo: "659-92",
-                artigo: "Art. 230, V",
-                categoria: "VEICULO",
-                titulo: "Conduzir veículo que não esteja registrado e devidamente licenciado",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 293,47",
-                fator: "1x",
-                infrator: "Proprietário",
-                medida: "Remoção do veículo ao depósito",
-                constatacao: "Consulta de licenciamento no sistema.",
-                obsObrigatoria: "Registrar o último exercício quitado no sistema de trânsito."
-            },
-            {
-                id: "218I",
-                codigo: "745-50",
-                artigo: "Art. 218, I",
-                categoria: "VELOCIDADE",
-                titulo: "Transitar em velocidade superior à máxima em até 20%",
-                gravidade: "Média",
-                pontos: 4,
-                valor: "R$ 130,16",
-                fator: "1x",
-                infrator: "Condutor / Proprietário",
-                medida: "Nenhuma",
-                constatacao: "Medição por instrumento ou equipamento hábil (Radar).",
-                obsObrigatoria: "Obrigatório constar a velocidade regulamentada, a velocidade medida e a velocidade considerada."
-            },
-            {
-                id: "218II",
-                codigo: "746-30",
-                artigo: "Art. 218, II",
-                categoria: "VELOCIDADE",
-                titulo: "Transitar em velocidade superior à máxima em mais de 20% até 50%",
-                gravidade: "Grave",
-                pontos: 5,
-                valor: "R$ 195,23",
-                fator: "1x",
-                infrator: "Condutor / Proprietário",
-                medida: "Nenhuma",
-                constatacao: "Medição por instrumento eletrônico de medição de velocidade.",
-                obsObrigatoria: "Obrigatório constar a velocidade regulamentada, a velocidade medida e a velocidade considerada."
-            },
-            {
-                id: "218III",
-                codigo: "747-10",
-                artigo: "Art. 218, III",
-                categoria: "VELOCIDADE",
-                titulo: "Transitar em velocidade superior à máxima em mais de 50%",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 880,41",
-                fator: "3x (Suspensão CNH)",
-                infrator: "Condutor / Proprietário",
-                medida: "Suspensão do direito de dirigir",
-                constatacao: "Medição por instrumento eletrônico de medição de velocidade.",
-                obsObrigatoria: "Obrigatório constar a velocidade regulamentada, a velocidade medida e a velocidade considerada."
-            },
-            {
-                id: "252VI",
-                codigo: "763-32",
-                artigo: "Art. 252, parágrafo único",
-                categoria: "CONDUTOR",
-                titulo: "Dirigir veículo segurando ou manuseando telefone celular",
-                gravidade: "Gravíssima",
-                pontos: 7,
-                valor: "R$ 293,47",
-                fator: "1x",
-                infrator: "Condutor",
-                medida: "Nenhuma",
-                constatacao: "Visual direta pelo agente de trânsito.",
-                obsObrigatoria: "Descrever qual a ação executada com o aparelho (ex: condutor segurava o celular com a mão esquerda na altura do rosto digitando mensagem)."
-            }
-        ];
-
-        // Estado do Aplicativo
+        let database = [];
         let currentCategory = 'TODOS';
         let favorites = JSON.parse(localStorage.getItem('ait_favorites')) || [];
         let drafts = JSON.parse(localStorage.getItem('ait_drafts')) || [];
 
-        // Inicialização
+        // Carregar JSON do GitHub / Netlify
+        async function loadInfractionsFromJSON() {
+            try {
+                const response = await fetch('./infracoes.json');
+                if (response.ok) {
+                    database = await response.json();
+                    renderInfractions();
+                    populateAITSelect();
+                }
+            } catch (error) {
+                console.error('Falha ao carregar infracoes.json:', error);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            renderInfractions();
-            populateAITSelect();
+            loadInfractionsFromJSON();
             updateDraftBadge();
             renderDrafts();
 
-            // Monitor de Conexão
             window.addEventListener('online', updateNetworkStatus);
             window.addEventListener('offline', updateNetworkStatus);
             updateNetworkStatus();
 
-            // Evento de Busca
             document.getElementById('searchInput').addEventListener('input', (e) => {
                 const term = e.target.value.trim();
                 document.getElementById('clearSearch').classList.toggle('hidden', term === '');
                 renderInfractions(term);
             });
 
-            // Toggle Dark Mode
             document.getElementById('themeToggle').addEventListener('click', () => {
                 document.documentElement.classList.toggle('dark');
             });
         });
 
-        // Alternar Abas
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => {
@@ -515,7 +301,6 @@
             activeBtn.classList.add('border-police-gold', 'text-police-gold');
         }
 
-        // Renderizar Lista de Infrações
         function renderInfractions(searchTerm = '') {
             const container = document.getElementById('infractionsList');
             container.innerHTML = '';
@@ -538,7 +323,7 @@
                 container.innerHTML = `
                     <div class="text-center py-8 text-slate-400 text-sm">
                         <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
-                        <p>Nenhuma infração encontrada.</p>
+                        <p>Nenhum enquadramento encontrado.</p>
                     </div>`;
                 return;
             }
@@ -546,13 +331,14 @@
             filtered.forEach(item => {
                 const isFav = favorites.includes(item.id);
                 const card = document.createElement('div');
-                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-2";
+                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-3";
                 
                 card.innerHTML = `
                     <div class="flex justify-between items-start gap-2">
                         <div>
                             <span class="inline-block px-2 py-0.5 rounded bg-police-800 text-police-gold font-mono font-bold text-xs">${item.codigo}</span>
                             <span class="text-xs font-bold text-slate-500 ml-1">${item.artigo}</span>
+                            <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded ml-1 font-semibold">${item.competencia}</span>
                         </div>
                         <button onclick="toggleFavorite('${item.id}')" class="text-lg ${isFav ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'} hover:scale-110 transition">
                             <i class="fa-solid fa-star"></i>
@@ -561,6 +347,12 @@
 
                     <h3 class="font-bold text-sm leading-snug">${item.titulo}</h3>
 
+                    <!-- Painel Orientador: Sem Abordagem (MBFT) -->
+                    <div class="p-2.5 rounded-lg text-xs bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300">
+                        <strong class="block text-[11px] uppercase tracking-wide"><i class="fa-solid fa-eye"></i> Autuação Sem Abordagem (MBFT):</strong>
+                        <span>${item.semAbordagem}</span>
+                    </div>
+
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] bg-slate-50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700/50">
                         <div><span class="text-slate-400 block">Gravidade:</span> <strong>${item.gravidade} (${item.pontos} pts)</strong></div>
                         <div><span class="text-slate-400 block">Valor:</span> <strong class="text-emerald-600 dark:text-emerald-400">${item.valor}</strong></div>
@@ -568,14 +360,14 @@
                         <div><span class="text-slate-400 block">Infrator:</span> <strong>${item.infrator}</strong></div>
                     </div>
 
-                    <div class="text-xs space-y-1 pt-1">
+                    <div class="text-xs space-y-1">
                         <p><strong class="text-police-gold">Medida Adm:</strong> ${item.medida}</p>
-                        <p class="text-slate-500 dark:text-slate-400 text-[11px]"><strong class="text-slate-400">Obs. Obrigatória:</strong> ${item.obsObrigatoria}</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px]"><strong class="text-slate-400">Obs. Obrigatória do MBFT:</strong> ${item.obsObrigatoria}</p>
                     </div>
 
-                    <div class="pt-2 flex justify-end">
+                    <div class="pt-1 flex justify-end">
                         <button onclick="selectInfractionForAIT('${item.id}')" class="text-xs bg-police-gold/10 hover:bg-police-gold/20 text-police-gold font-bold px-3 py-1.5 rounded-lg border border-police-gold/30 flex items-center gap-1">
-                            <i class="fa-solid fa-plus"></i> Usar no Rascunho AIT
+                            <i class="fa-solid fa-pen-to-square"></i> Usar Minuta no Rascunho
                         </button>
                     </div>
                 `;
@@ -583,113 +375,13 @@
             });
         }
 
-        // Favoritar
-        function toggleFavorite(id) {
-            if (favorites.includes(id)) {
-                favorites = favorites.filter(favId => favId !== id);
-            } else {
-                favorites.push(id);
-            }
-            localStorage.setItem('ait_favorites', JSON.stringify(favorites));
-            renderInfractions(document.getElementById('searchInput').value);
-        }
-
-        // Filtro de Categoria
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-police-gold', 'text-police-gold', 'text-police-900', 'font-bold');
-                btn.classList.add('bg-white', 'dark:bg-slate-800');
-            });
-            event.target.classList.add('bg-police-gold', 'text-police-900', 'font-bold');
-            renderInfractions();
-        }
-
-        function clearSearchInput() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('clearSearch').classList.add('hidden');
-            renderInfractions();
-        }
-
-        // Calculadora de Velocidade (Radar CONTRAN)
-        function calculateSpeed() {
-            const limit = parseFloat(document.getElementById('radarLimit').value);
-            const measured = parseFloat(document.getElementById('radarMeasured').value);
-            const resDiv = document.getElementById('radarResult');
-
-            if (!limit || !measured) {
-                alert('Preencha os dois campos de velocidade.');
-                return;
-            }
-
-            // Margem de erro CONTRAN: 7 km/h para até 100 km/h; 7% para acima de 100 km/h
-            let considered = 0;
-            if (measured <= 100) {
-                considered = measured - 7;
-            } else {
-                considered = Math.floor(measured * 0.93);
-            }
-
-            const pctExceed = ((considered - limit) / limit) * 100;
-
-            let article = "";
-            let codeId = "";
-            let badgeClass = "";
-
-            if (considered <= limit) {
-                resDiv.className = "p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 space-y-1";
-                resDiv.innerHTML = `
-                    <p class="font-bold text-sm"><i class="fa-solid fa-circle-check"></i> Sem Infração de Velocidade</p>
-                    <p class="text-xs">Velocidade Considerada: <strong>${considered} km/h</strong> (Abaixo ou igual ao limite de ${limit} km/h).</p>
-                `;
-                resDiv.classList.remove('hidden');
-                return;
-            } else if (pctExceed <= 20) {
-                article = "Art. 218, I (Até 20% acima)";
-                codeId = "218I";
-                badgeClass = "bg-amber-500/20 text-amber-400 border-amber-500/30";
-            } else if (pctExceed <= 50) {
-                article = "Art. 218, II (De 20% até 50% acima)";
-                codeId = "218II";
-                badgeClass = "bg-orange-500/20 text-orange-400 border-orange-500/30";
-            } else {
-                article = "Art. 218, III (Acima de 50% - Suspensão CNH)";
-                codeId = "218III";
-                badgeClass = "bg-rose-500/20 text-rose-400 border-rose-500/30";
-            }
-
-            resDiv.className = `p-4 rounded-lg border space-y-2 ${badgeClass}`;
-            resDiv.innerHTML = `
-                <div class="flex justify-between items-center">
-                    <span class="font-bold text-sm">${article}</span>
-                    <span class="text-xs px-2 py-0.5 rounded font-bold uppercase bg-black/20">${pctExceed.toFixed(1)}% Acima</span>
-                </div>
-                <div class="text-xs space-y-1">
-                    <p>Velocidade Medida: <strong>${measured} km/h</strong> | Considerada: <strong class="text-lg">${considered} km/h</strong></p>
-                    <p>Limite da Via: <strong>${limit} km/h</strong></p>
-                </div>
-                <button onclick="applySpeedToAIT('${codeId}', ${limit}, ${measured}, ${considered})" class="w-full mt-2 py-2 bg-police-gold text-police-900 font-bold text-xs rounded shadow flex items-center justify-center gap-1">
-                    <i class="fa-solid fa-file-export"></i> Importar para Rascunho AIT
-                </button>
-            `;
-            resDiv.classList.remove('hidden');
-        }
-
-        function applySpeedToAIT(codeId, limit, measured, considered) {
-            switchTab('tab-ait');
-            document.getElementById('aitCodeSelect').value = codeId;
-            fillCodeDetails();
-            document.getElementById('aitObs').value = `Medição realizada por radar. Velocidade Regulamentada: ${limit} km/h. Velocidade Medida: ${measured} km/h. Velocidade Considerada: ${considered} km/h.`;
-        }
-
-        // Povoar Select do Form AIT
         function populateAITSelect() {
             const select = document.getElementById('aitCodeSelect');
             select.innerHTML = '<option value="">-- Selecione a Infração --</option>';
             database.forEach(item => {
                 const opt = document.createElement('option');
                 opt.value = item.id;
-                opt.textContent = `${item.codigo} - ${item.artigo} (${item.titulo.substring(0, 40)}...)`;
+                opt.textContent = `${item.codigo} - ${item.artigo} (${item.titulo.substring(0, 35)}...)`;
                 select.appendChild(opt);
             });
         }
@@ -703,71 +395,45 @@
         function fillCodeDetails() {
             const id = document.getElementById('aitCodeSelect').value;
             const item = database.find(i => i.id === id);
-            if (item && !document.getElementById('aitObs').value) {
+            const modelSelect = document.getElementById('aitObsModelSelect');
+            const modelContainer = document.getElementById('modelObsContainer');
+
+            if (item) {
+                if (item.modelosObs && item.modelosObs.length > 0) {
+                    modelSelect.innerHTML = '<option value="">-- Selecione a versão de enquadramento --</option>';
+                    item.modelosObs.forEach((mod, idx) => {
+                        const opt = document.createElement('option');
+                        opt.value = mod;
+                        opt.textContent = `Opção ${idx + 1}: ${mod.substring(0, 50)}...`;
+                        modelSelect.appendChild(opt);
+                    });
+                    modelContainer.classList.remove('hidden');
+                } else {
+                    modelContainer.classList.add('hidden');
+                }
+
                 document.getElementById('aitObs').value = item.obsObrigatoria;
             }
         }
 
-        // Processamento de Imagem OCR (Tesseract.js)
-        async function processOCRImage(input) {
-            if (!input.files || !input.files[0]) return;
-
-            const file = input.files[0];
-            const progBar = document.getElementById('ocrProgress');
-            const progBarInner = document.getElementById('ocrProgressBar');
-            const progStatus = document.getElementById('ocrStatusText');
-            const progPercent = document.getElementById('ocrPercent');
-            const resultBox = document.getElementById('ocrResultText');
-
-            progBar.classList.remove('hidden');
-            resultBox.classList.add('hidden');
-
-            try {
-                const worker = await Tesseract.createWorker('por');
-                
-                const ret = await worker.recognize(file, {
-                    logger: m => {
-                        if (m.status === 'recognizing text') {
-                            const p = Math.round(m.progress * 100);
-                            progBarInner.style.width = `${p}%`;
-                            progPercent.textContent = `${p}%`;
-                            progStatus.textContent = 'Processando texto da imagem...';
-                        }
-                    }
-                });
-
-                await worker.terminate();
-
-                const text = ret.data.text;
-                resultBox.textContent = `Texto Detectado:\n${text}`;
-                resultBox.classList.remove('hidden');
-
-                // Regex para Placa Mercosul (ABC1D23) ou Antiga (ABC1234)
-                const mercosulRegex = /[A-Z]{3}[0-9][A-Z0-9][0-9]{2}/i;
-                const antigaRegex = /[A-Z]{3}[-\s]?[0-9]{4}/i;
-
-                const matchMercosul = text.match(mercosulRegex);
-                const matchAntiga = text.match(antigaRegex);
-
-                if (matchMercosul) {
-                    document.getElementById('aitPlaca').value = matchMercosul[0].toUpperCase();
-                    alert(`Placa Mercosul detectada: ${matchMercosul[0].toUpperCase()}`);
-                } else if (matchAntiga) {
-                    document.getElementById('aitPlaca').value = matchAntiga[0].replace('-', '').toUpperCase();
-                    alert(`Placa Tradicional detectada: ${matchAntiga[0].toUpperCase()}`);
-                } else {
-                    alert('Nenhum padrão de placa de veículo foi identificado automaticamente. Verifique o texto escaneado abaixo.');
-                }
-
-            } catch (err) {
-                alert('Erro ao processar imagem para OCR. Tente uma foto mais nítida.');
-                console.error(err);
-            } finally {
-                progBar.classList.add('hidden');
+        function applyObsModel() {
+            const selectedVal = document.getElementById('aitObsModelSelect').value;
+            if (selectedVal) {
+                document.getElementById('aitObs').value = selectedVal;
             }
         }
 
-        // Gestão de Rascunhos de AIT
+        function copyObsText() {
+            const txt = document.getElementById('aitObs').value;
+            if (!txt) {
+                alert('O campo de observações está vazio.');
+                return;
+            }
+            navigator.clipboard.writeText(txt).then(() => {
+                alert('Texto de observação copiado! Cole no campo do sistema oficial do órgão autuador.');
+            });
+        }
+
         function saveAITDraft() {
             const placa = document.getElementById('aitPlaca').value.toUpperCase().trim();
             const local = document.getElementById('aitLocal').value.trim();
@@ -785,21 +451,17 @@
                 dataHora: new Date().toLocaleString('pt-BR'),
                 placa,
                 uf: document.getElementById('aitUf').value.toUpperCase().trim(),
-                modelo: document.getElementById('aitModelo').value.toUpperCase().trim(),
-                cor: document.getElementById('aitCor').value.toUpperCase().trim(),
                 local,
                 codigo: item.codigo,
                 artigo: item.artigo,
-                titulo: item.titulo,
                 obs: document.getElementById('aitObs').value.trim()
             };
 
             drafts.unshift(draft);
             localStorage.setItem('ait_drafts', JSON.stringify(drafts));
-            
             updateDraftBadge();
             renderDrafts();
-            alert('Rascunho de AIT salvo com sucesso na memória do dispositivo!');
+            alert('Minuta salva com sucesso nos rascunhos!');
             clearAITForm();
         }
 
@@ -811,7 +473,7 @@
                 container.innerHTML = `
                     <div class="text-center py-8 text-slate-400 text-sm">
                         <i class="fa-solid fa-folder-open text-2xl mb-2"></i>
-                        <p>Nenhum rascunho salvo.</p>
+                        <p>Nenhuma minuta salva.</p>
                     </div>`;
                 return;
             }
@@ -831,16 +493,22 @@
                     <div class="text-xs space-y-1">
                         <p><strong>Local:</strong> ${draft.local}</p>
                         <p><strong>Infração:</strong> ${draft.codigo} - ${draft.artigo}</p>
-                        <p class="text-slate-400 italic text-[11px] truncate">"${draft.obs}"</p>
+                        <p class="text-slate-400 italic text-[11px] font-mono p-1 bg-slate-50 dark:bg-slate-900 rounded break-words">"${draft.obs}"</p>
                     </div>
 
                     <div class="flex gap-2 pt-1">
-                        <button onclick="openThermalFromDraft(${draft.id})" class="flex-1 py-1.5 bg-police-800 text-white font-bold text-xs rounded flex items-center justify-center gap-1">
-                            <i class="fa-solid fa-print"></i> Ver / Imprimir
+                        <button onclick="copyDraftText('${draft.obs}')" class="flex-1 py-1.5 bg-police-gold text-police-900 font-bold text-xs rounded flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-copy"></i> Copiar Minuta
                         </button>
                     </div>
                 `;
                 container.appendChild(card);
+            });
+        }
+
+        function copyDraftText(txt) {
+            navigator.clipboard.writeText(txt).then(() => {
+                alert('Minuta copiada!');
             });
         }
 
@@ -852,7 +520,7 @@
         }
 
         function clearAllDrafts() {
-            if (confirm('Deseja apagar TODOS os rascunhos salvos?')) {
+            if (confirm('Apagar todas as minutas salvas?')) {
                 drafts = [];
                 localStorage.removeItem('ait_drafts');
                 updateDraftBadge();
@@ -872,65 +540,33 @@
 
         function clearAITForm() {
             document.getElementById('aitForm').reset();
-            document.getElementById('ocrResultText').classList.add('hidden');
+            document.getElementById('modelObsContainer').classList.add('hidden');
         }
 
-        // Impressão Térmica
-        function generateThermalReceipt() {
-            const placa = document.getElementById('aitPlaca').value.toUpperCase().trim();
-            const local = document.getElementById('aitLocal').value.trim();
-            const codeId = document.getElementById('aitCodeSelect').value;
-
-            if (!placa || !local || !codeId) {
-                alert('Preencha ao menos Placa, Local e Enquadramento para gerar o comprovante.');
-                return;
+        function toggleFavorite(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(favId => favId !== id);
+            } else {
+                favorites.push(id);
             }
-
-            const item = database.find(i => i.id === codeId);
-
-            document.getElementById('receiptDate').textContent = new Date().toLocaleString('pt-BR');
-            document.getElementById('rPlaca').textContent = placa;
-            document.getElementById('rUf').textContent = document.getElementById('aitUf').value.toUpperCase().trim() || 'N/A';
-            document.getElementById('rModelo').textContent = document.getElementById('aitModelo').value.toUpperCase().trim() || 'N/I';
-            document.getElementById('rCor').textContent = document.getElementById('aitCor').value.toUpperCase().trim() || 'N/I';
-            document.getElementById('rLocal').textContent = local;
-            document.getElementById('rCodigo').textContent = item.codigo;
-            document.getElementById('rArtigo').textContent = item.artigo;
-            document.getElementById('rGravidade').textContent = `${item.gravidade} (${item.pontos} pts)`;
-            document.getElementById('rDesc').textContent = item.titulo;
-            document.getElementById('rObs').textContent = document.getElementById('aitObs').value.trim() || 'Sem observações adicionais.';
-
-            document.getElementById('receiptModal').classList.remove('hidden');
+            localStorage.setItem('ait_favorites', JSON.stringify(favorites));
+            renderInfractions(document.getElementById('searchInput').value);
         }
 
-        function openThermalFromDraft(id) {
-            const draft = drafts.find(d => d.id === id);
-            if (!draft) return;
-
-            document.getElementById('receiptDate').textContent = draft.dataHora;
-            document.getElementById('rPlaca').textContent = draft.placa;
-            document.getElementById('rUf').textContent = draft.uf || 'N/A';
-            document.getElementById('rModelo').textContent = draft.modelo || 'N/I';
-            document.getElementById('rCor').textContent = draft.cor || 'N/I';
-            document.getElementById('rLocal').textContent = draft.local;
-            document.getElementById('rCodigo').textContent = draft.codigo;
-            document.getElementById('rArtigo').textContent = draft.artigo;
-            document.getElementById('rGravidade').textContent = 'N/A';
-            document.getElementById('rDesc').textContent = draft.titulo;
-            document.getElementById('rObs').textContent = draft.obs;
-
-            document.getElementById('receiptModal').classList.remove('hidden');
-        }
-
-        function closeReceiptModal() {
-            document.getElementById('receiptModal').classList.add('hidden');
-        }
-
-        function copyReceiptText() {
-            const area = document.getElementById('receiptPrintArea');
-            navigator.clipboard.writeText(area.innerText).then(() => {
-                alert('Texto do AIT copiado para a área de transferência!');
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-police-gold', 'text-police-gold', 'text-police-900', 'font-bold');
+                btn.classList.add('bg-white', 'dark:bg-slate-800');
             });
+            event.target.classList.add('bg-police-gold', 'text-police-900', 'font-bold');
+            renderInfractions();
+        }
+
+        function clearSearchInput() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('clearSearch').classList.add('hidden');
+            renderInfractions();
         }
 
         function updateNetworkStatus() {
