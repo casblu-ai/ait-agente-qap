@@ -1,306 +1,584 @@
-[
-  {
-    "id": "165",
-    "codigo": "757-90",
-    "artigo": "Art. 165",
-    "competencia": "Estadual / Detran",
-    "categoria": "ALCOOLEMIA",
-    "titulo": "Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 2.934,70",
-    "fator": "10x",
-    "infrator": "Condutor",
-    "medida": "Recolhimento do documento de habilitação e retenção do veículo",
-    "constatacao": "Etilômetro, exame clínico ou termo de constatação de sinais de alteração psicomotora.",
-    "obsObrigatoria": "Obrigatório registrar o número do teste/recolhimento, marca/modelo e nº de série do etilômetro, valor medido (mg/L) ou detalhar os sinais de alteração psicomotora."
-  },
-  {
-    "id": "165A",
-    "codigo": "758-70",
-    "artigo": "Art. 165-A",
-    "competencia": "Estadual / Detran",
-    "categoria": "ALCOOLEMIA",
-    "titulo": "Recusar-se a ser submetido a teste, exame clínico ou perícia de alcoolemia",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 2.934,70",
-    "fator": "10x",
-    "infrator": "Condutor",
-    "medida": "Recolhimento do documento de habilitação e retenção do veículo",
-    "constatacao": "Recusa formal do condutor em realizar o procedimento oferecido pelo agente.",
-    "obsObrigatoria": "Descrever a oferta expressa do teste, modelo/número do etilômetro disponibilizado e a recusa verbal ou atitudinal do condutor."
-  },
-  {
-    "id": "162I",
-    "codigo": "501-00",
-    "artigo": "Art. 162, I",
-    "competencia": "Estadual / Detran",
-    "categoria": "CONDUTOR",
-    "titulo": "Dirigir veículo sem possuir CNH, Permissão para Dirigir ou ACC",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 880,41",
-    "fator": "3x",
-    "infrator": "Condutor / Proprietário",
-    "medida": "Retenção do veículo até a apresentação de condutor habilitado",
-    "constatacao": "Consulta aos sistemas oficiais (SENATRAN/DETRAN).",
-    "obsObrigatoria": "Informar se o condutor declarou não possuir habilitação e o resultado da consulta ao sistema."
-  },
-  {
-    "id": "162II",
-    "codigo": "502-30",
-    "artigo": "Art. 162, II",
-    "competencia": "Estadual / Detran",
-    "categoria": "CONDUTOR",
-    "titulo": "Dirigir veículo com CNH/PPD cassada ou com direito de dirigir suspenso",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 880,41",
-    "fator": "3x",
-    "infrator": "Condutor",
-    "medida": "Recolhimento da CNH e retenção do veículo",
-    "constatacao": "Consulta ao sistema com bloqueio ou suspensão ativa.",
-    "obsObrigatoria": "Indicar o número do processo administrativo de suspensão/cassação informado no sistema."
-  },
-  {
-    "id": "162III",
-    "codigo": "503-10",
-    "artigo": "Art. 162, III",
-    "competencia": "Estadual / Detran",
-    "categoria": "CONDUTOR",
-    "titulo": "Dirigir veículo com CNH ou PPD de categoria diferente da do veículo",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 586,94",
-    "fator": "2x",
-    "infrator": "Condutor",
-    "medida": "Retenção do veículo até a apresentação de condutor habilitado",
-    "constatacao": "Conferência do documento ou consulta ao sistema.",
-    "obsObrigatoria": "Indicar a categoria possuída pelo condutor e o tipo/categoria do veículo fiscalizado."
-  },
-  {
-    "id": "162V",
-    "codigo": "505-80",
-    "artigo": "Art. 162, V",
-    "competencia": "Estadual / Detran",
-    "categoria": "CONDUTOR",
-    "titulo": "Dirigir veículo com validade da CNH vencida há mais de 30 dias",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x",
-    "infrator": "Condutor",
-    "medida": "Recolhimento da CNH e retenção do veículo",
-    "constatacao": "Conferência física ou consulta ao sistema.",
-    "obsObrigatoria": "Registrar a data exata de vencimento da CNH do condutor."
-  },
-  {
-    "id": "181I",
-    "codigo": "538-00",
-    "artigo": "Art. 181, I",
-    "competencia": "Municipal",
-    "categoria": "ESTACIONAMENTO",
-    "titulo": "Estacionar nas esquinas e a menos de 5 metros do bordo do alinhamento da via transversal",
-    "gravidade": "Média",
-    "pontos": 4,
-    "valor": "R$ 130,16",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Remoção do veículo",
-    "constatacao": "Medição visual ou por trena da distância até a esquina.",
-    "obsObrigatoria": "Descrever a posição do veículo referente à esquina e a distância aproximada/medida do bordo da via."
-  },
-  {
-    "id": "181VIII",
-    "codigo": "545-21",
-    "artigo": "Art. 181, VIII",
-    "competencia": "Municipal",
-    "categoria": "ESTACIONAMENTO",
-    "titulo": "Estacionar no passeio (calçada), faixa de pedestres, ciclovia ou ciclofaixa",
-    "gravidade": "Grave",
-    "pontos": 5,
-    "valor": "R$ 195,23",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Remoção do veículo",
-    "constatacao": "Constatação visual direta pelo agente.",
-    "obsObrigatoria": "Especificar o local exato onde as rodas/veículo estavam posicionados (ex: veículo com as quatro rodas sobre o passeio obstaculizando o trânsito de pedestres)."
-  },
-  {
-    "id": "181XVII",
-    "codigo": "554-12",
-    "artigo": "Art. 181, XVII",
-    "competencia": "Municipal",
-    "categoria": "ESTACIONAMENTO",
-    "titulo": "Estacionar em desacordo com as condições regulamentadas pela sinalização (Estacionamento Regulamentado / Zona Azul)",
-    "gravidade": "Grave",
-    "pontos": 5,
-    "valor": "R$ 195,23",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Remoção do veículo",
-    "constatacao": "Ausência do comprovante/cartão ou excesso de tempo regulamentado.",
-    "obsObrigatoria": "Informar a sinalização existente no local (placa R-6b) e a irregularidade constatada."
-  },
-  {
-    "id": "181XX",
-    "codigo": "556-80",
-    "artigo": "Art. 181, XX",
-    "competencia": "Municipal",
-    "categoria": "ESTACIONAMENTO",
-    "titulo": "Estacionar em vagas reservadas a idosos ou pessoas com deficiência sem credencial",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Remoção do veículo",
-    "constatacao": "Constatação visual de ausência da credencial obrigatória no painel.",
-    "obsObrigatoria": "Informar se a vaga possuía sinalização R-6b com pintura no pavimento e ausência do cartão credencial visível."
-  },
-  {
-    "id": "208",
-    "codigo": "605-01",
-    "artigo": "Art. 208",
-    "competencia": "Municipal / Concorrente",
-    "categoria": "CIRCULACAO",
-    "titulo": "Avançar o sinal vermelho do semáforo ou o de parada obrigatória (Placa R-1)",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x",
-    "infrator": "Condutor",
-    "medida": "Nenhuma",
-    "constatacao": "Visual pelo agente ou por equipamento eletrônico aprovado.",
-    "obsObrigatoria": "Informar o sentido da via, se a transposição foi do semáforo ou da placa R-1 de parada obrigatória."
-  },
-  {
-    "id": "218I",
-    "codigo": "745-50",
-    "artigo": "Art. 218, I",
-    "competencia": "Municipal / Concorrente",
-    "categoria": "VELOCIDADE",
-    "titulo": "Transitar em velocidade superior à máxima em até 20%",
-    "gravidade": "Média",
-    "pontos": 4,
-    "valor": "R$ 130,16",
-    "fator": "1x",
-    "infrator": "Condutor / Proprietário",
-    "medida": "Nenhuma",
-    "constatacao": "Medição por instrumento ou equipamento hábil (Radar).",
-    "obsObrigatoria": "Constar: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada."
-  },
-  {
-    "id": "218II",
-    "codigo": "746-30",
-    "artigo": "Art. 218, II",
-    "competencia": "Municipal / Concorrente",
-    "categoria": "VELOCIDADE",
-    "titulo": "Transitar em velocidade superior à máxima em mais de 20% até 50%",
-    "gravidade": "Grave",
-    "pontos": 5,
-    "valor": "R$ 195,23",
-    "fator": "1x",
-    "infrator": "Condutor / Proprietário",
-    "medida": "Nenhuma",
-    "constatacao": "Medição por equipamento eletrônico de velocidade.",
-    "obsObrigatoria": "Constar: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada."
-  },
-  {
-    "id": "218III",
-    "codigo": "747-10",
-    "artigo": "Art. 218, III",
-    "competencia": "Municipal / Concorrente",
-    "categoria": "VELOCIDADE",
-    "titulo": "Transitar em velocidade superior à máxima em mais de 50%",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 880,41",
-    "fator": "3x (Suspensão CNH)",
-    "infrator": "Condutor / Proprietário",
-    "medida": "Suspensão do direito de dirigir e recolhimento da CNH",
-    "constatacao": "Medição por equipamento eletrônico de velocidade.",
-    "obsObrigatoria": "Constar: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada."
-  },
-  {
-    "id": "230V",
-    "codigo": "659-92",
-    "artigo": "Art. 230, V",
-    "competencia": "Estadual / Detran",
-    "categoria": "VEICULO",
-    "titulo": "Conduzir veículo que não esteja registrado e devidamente licenciado",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Remoção do veículo ao depósito",
-    "constatacao": "Consulta de licenciamento nos sistemas oficiais.",
-    "obsObrigatoria": "Registrar o último exercício quitado constante na consulta ao sistema."
-  },
-  {
-    "id": "230XVIII",
-    "codigo": "672-61",
-    "artigo": "Art. 230, XVIII",
-    "competencia": "Estadual / Detran",
-    "categoria": "VEICULO",
-    "titulo": "Conduzir o veículo em mau estado de conservação, comprometendo a segurança",
-    "gravidade": "Grave",
-    "pontos": 5,
-    "valor": "R$ 195,23",
-    "fator": "1x",
-    "infrator": "Proprietário",
-    "medida": "Retenção do veículo para regularização",
-    "constatacao": "Constatação visual direta pelo agente de trânsito.",
-    "obsObrigatoria": "Descrever pormenorizadamente o defeito (ex: pneus em estado de desgastes além do TWI/arame, para-brisa trincado, iluminação traseira inoperante)."
-  },
-  {
-    "id": "244I",
-    "codigo": "703-01",
-    "artigo": "Art. 244, I",
-    "competencia": "Estadual / Detran",
-    "categoria": "MOTOCICLETA",
-    "titulo": "Conduzir motocicleta, motoneta ou ciclomotor sem usar capacete de segurança ou com viseira/óculos fora do padrão",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x (Suspensão CNH)",
-    "infrator": "Condutor",
-    "medida": "Retenção do veículo até regularização e recolhimento da CNH",
-    "constatacao": "Constatação visual direta pelo agente.",
-    "obsObrigatoria": "Descrever se ausente o capacete, com viseira levantada à noite, sem óculos de proteção ou capacete não homologado."
-  },
-  {
-    "id": "244IV",
-    "codigo": "706-40",
-    "artigo": "Art. 244, IV",
-    "competencia": "Estadual / Detran",
-    "categoria": "MOTOCICLETA",
-    "titulo": "Conduzir motocicleta, motoneta ou ciclomotor com os faróis apagados",
-    "gravidade": "Média",
-    "pontos": 4,
-    "valor": "R$ 130,16",
-    "fator": "1x",
-    "infrator": "Condutor",
-    "medida": "Nenhuma",
-    "constatacao": "Constatação visual direta pelo agente.",
-    "obsObrigatoria": "Registrar que o veículo transitava em via pública com o farol dianteiro totalmente apagado durante a abordagem."
-  },
-  {
-    "id": "252VI",
-    "codigo": "763-32",
-    "artigo": "Art. 252, parágrafo único",
-    "competencia": "Municipal / Concorrente",
-    "categoria": "CONDUTOR",
-    "titulo": "Dirigir veículo segurando ou manuseando telefone celular",
-    "gravidade": "Gravíssima",
-    "pontos": 7,
-    "valor": "R$ 293,47",
-    "fator": "1x",
-    "infrator": "Condutor",
-    "medida": "Nenhuma",
-    "constatacao": "Constatação visual direta pelo agente de trânsito.",
-    "obsObrigatoria": "Especificar a conduta observada (ex: condutor segurava o celular com a mão esquerda digitando mensagem na altura do volante)."
-  }
-]
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AIT Agente - Guia de Fiscalização de Trânsito</title>
+
+    <!-- PWA Web App Manifest dinâmico -->
+    <script>
+        const manifestData = {
+            "name": "AIT Agente - Guia de Fiscalização",
+            "short_name": "AIT Agente",
+            "start_url": "./",
+            "display": "standalone",
+            "background_color": "#0f172a",
+            "theme_color": "#1e293b",
+            "icons": [{
+                "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23fbbf24'><path d='M256 32L32 96v160c0 128 96 224 224 256 128-32 224-128 224-256V96L256 32zm0 64l160 48v112c0 96-72 168-160 192-88-24-160-96-160-192V144l160-48z'/></svg>",
+                "sizes": "512x512",
+                "type": "image/svg+xml"
+            }]
+        };
+        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+        const manifestUrl = URL.createObjectURL(manifestBlob);
+        const link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = manifestUrl;
+        document.head.appendChild(link);
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        police: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0b1b2b',
+                            gold: '#f59e0b',
+                            goldhover: '#d97706'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tesseract.js CDN para OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @media print {
+            body * { visibility: hidden; }
+            #receiptPrintArea, #receiptPrintArea * { visibility: visible; }
+            #receiptPrintArea { position: absolute; left: 0; top: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+    <!-- Navbar Superior Fixa -->
+    <header class="sticky top-0 z-40 bg-police-900 text-white shadow-md border-b border-police-gold/30">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-police-gold text-police-900 font-black px-2 py-1 rounded text-[10px] tracking-wider uppercase">Consulta em Campo</div>
+                <h1 class="text-base font-bold tracking-wide flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-police-gold"></i> AIT AGENTE
+                </h1>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <span id="netStatus" class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE
+                </span>
+                
+                <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">
+                    <i class="fa-solid fa-moon text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Aviso do Sistema -->
+    <div class="bg-amber-500/10 border-b border-amber-500/30 px-4 py-2 text-center text-[11px] text-amber-600 dark:text-amber-400 font-medium">
+        <i class="fa-solid fa-circle-info mr-1"></i> Ferramenta de apoio para consulta de enquadramentos do MBFT. O AIT oficial deve ser lavrado no sistema do órgão autuador.
+    </div>
+
+    <!-- Navegação de Abas -->
+    <nav class="bg-police-800 border-b border-slate-700 text-slate-300 text-xs font-semibold sticky top-[57px] z-30">
+        <div class="max-w-4xl mx-auto flex justify-around">
+            <button onclick="switchTab('tab-search')" id="btn-tab-search" class="tab-btn py-3 px-2 border-b-2 border-police-gold text-police-gold flex items-center gap-1.5 flex-1 justify-center">
+                <i class="fa-solid fa-book-bookmark"></i> Enquadramentos MBFT
+            </button>
+            <button onclick="switchTab('tab-ait')" id="btn-tab-ait" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center">
+                <i class="fa-solid fa-file-pen"></i> Rascunho / Minuta
+            </button>
+            <button onclick="switchTab('tab-drafts')" id="btn-tab-drafts" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center relative">
+                <i class="fa-solid fa-folder-closed"></i> Rascunhos Salvos
+                <span id="draftCountBadge" class="bg-police-gold text-police-900 text-[10px] px-1.5 py-0.2 rounded-full font-bold ml-0.5 hidden">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 max-w-4xl w-full mx-auto p-4 space-y-4">
+
+        <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS MBFT -->
+        <section id="tab-search" class="tab-content space-y-4">
+            <div class="space-y-2">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, característica, celular..."
+                        class="w-full pl-10 pr-10 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-police-gold text-sm">
+                    <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                        <i class="fa-solid fa-circle-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Filtros Rápidos -->
+                <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+                    <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-police-gold text-police-900 font-bold whitespace-nowrap shadow-sm">Todos</button>
+                    <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Alcoolemia</button>
+                    <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">CNH / Condutor</button>
+                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Veículo / Alterações</button>
+                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Estacionamento</button>
+                    <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> Favoritos</button>
+                </div>
+            </div>
+
+            <!-- Lista de Resultados -->
+            <div id="infractionsList" class="space-y-3">
+                <!-- Injetado via JS -->
+            </div>
+        </section>
+
+        <!-- ABA 2: GERADOR DE RASCUNHO / MINUTA DE AIT -->
+        <section id="tab-ait" class="tab-content hidden space-y-4">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-file-pen text-police-gold text-xl"></i>
+                        <h2 class="font-bold text-base">Preparar Minuta / Rascunho para o Sistema Oficial</h2>
+                    </div>
+                    <button onclick="clearAITForm()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-can"></i> Limpar</button>
+                </div>
+
+                <form id="aitForm" class="space-y-3" onsubmit="event.preventDefault();">
+                    
+                    <!-- Scanner OCR de Placa -->
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-dashed border-police-gold/50 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-police-gold flex items-center gap-1.5">
+                                <i class="fa-solid fa-camera"></i> Escanear Placa do Veículo (OCR)
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <label class="flex-1 cursor-pointer bg-police-800 hover:bg-police-900 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow transition">
+                                <i class="fa-solid fa-camera-retro"></i> Capturar Fotografia
+                                <input type="file" id="ocrInput" accept="image/*" capture="environment" class="hidden" onchange="processOCRImage(this)">
+                            </label>
+                        </div>
+                        
+                        <div id="ocrProgress" class="hidden space-y-1">
+                            <div class="flex justify-between text-[10px] text-slate-400">
+                                <span id="ocrStatusText">Reconhecendo texto...</span>
+                                <span id="ocrPercent">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
+                                <div id="ocrProgressBar" class="bg-police-gold h-1.5 rounded-full w-0 transition-all duration-300"></div>
+                            </div>
+                        </div>
+
+                        <div id="ocrResultText" class="hidden text-[11px] p-2 bg-white dark:bg-slate-800 rounded border border-slate-300 dark:border-slate-700 max-h-20 overflow-y-auto font-mono"></div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">Placa do Veículo *</label>
+                            <input type="text" id="aitPlaca" placeholder="ABC1D23" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1">UF do Veículo</label>
+                            <input type="text" id="aitUf" placeholder="Ex: RO, SP" maxlength="2" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold mb-1">Local da Infração (Rua/Av/Nº) *</label>
+                        <input type="text" id="aitLocal" placeholder="Ex: Av. Jorge Teixeira, nº 1200" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold mb-1">Enquadramento / Código da Infração *</label>
+                        <select id="aitCodeSelect" onchange="fillCodeDetails()" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
+                            <option value="">-- Selecione a Infração --</option>
+                        </select>
+                    </div>
+
+                    <!-- Seletor de Minutas / Versões de Observação -->
+                    <div id="modelObsContainer" class="hidden space-y-1">
+                        <label class="block text-xs font-bold text-police-gold"><i class="fa-solid fa-list-check"></i> Selecione o Modelo / Versão de Observação:</label>
+                        <select id="aitObsModelSelect" onchange="applyObsModel()" class="w-full p-2 bg-amber-500/10 border border-amber-500/40 text-amber-700 dark:text-amber-300 rounded text-xs">
+                            <option value="">-- Escolha a versão de enquadramento --</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold mb-1">Campo de Observações do AIT (Pronto para copiar)</label>
+                        <textarea id="aitObs" rows="4" placeholder="O texto preenchido aqui servirá de minuta para colagem no sistema de autuação do órgão..." class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm font-mono"></textarea>
+                    </div>
+
+                    <div class="flex gap-2 pt-2">
+                        <button type="button" onclick="copyObsText()" class="flex-1 py-2.5 bg-police-gold hover:bg-police-goldhover text-police-900 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
+                            <i class="fa-solid fa-copy"></i> Copiar Observação
+                        </button>
+                        <button type="button" onclick="saveAITDraft()" class="flex-1 py-2.5 bg-police-800 hover:bg-police-900 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
+                            <i class="fa-solid fa-floppy-disk"></i> Salvar Rascunho
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ABA 3: RASCUNHOS SALVOS -->
+        <section id="tab-drafts" class="tab-content hidden space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-base flex items-center gap-2">
+                    <i class="fa-solid fa-folder-open text-police-gold"></i> Rascunhos de Minutas Salvos
+                </h2>
+                <button onclick="clearAllDrafts()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-arrow-up"></i> Excluir Todos</button>
+            </div>
+
+            <div id="draftsContainer" class="space-y-3">
+                <!-- Injetado via JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS E LÓGICA DO SISTEMA -->
+    <script>
+        let database = [];
+        let currentCategory = 'TODOS';
+        let favorites = JSON.parse(localStorage.getItem('ait_favorites')) || [];
+        let drafts = JSON.parse(localStorage.getItem('ait_drafts')) || [];
+
+        // Carregar JSON do GitHub / Netlify
+        async function loadInfractionsFromJSON() {
+            try {
+                const response = await fetch('./infracoes.json');
+                if (response.ok) {
+                    database = await response.json();
+                    renderInfractions();
+                    populateAITSelect();
+                }
+            } catch (error) {
+                console.error('Falha ao carregar infracoes.json:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadInfractionsFromJSON();
+            updateDraftBadge();
+            renderDrafts();
+
+            window.addEventListener('online', updateNetworkStatus);
+            window.addEventListener('offline', updateNetworkStatus);
+            updateNetworkStatus();
+
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                const term = e.target.value.trim();
+                document.getElementById('clearSearch').classList.toggle('hidden', term === '');
+                renderInfractions(term);
+            });
+
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('border-police-gold', 'text-police-gold');
+                el.classList.add('border-transparent');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.classList.remove('border-transparent');
+            activeBtn.classList.add('border-police-gold', 'text-police-gold');
+        }
+
+        function renderInfractions(searchTerm = '') {
+            const container = document.getElementById('infractionsList');
+            container.innerHTML = '';
+
+            const filtered = database.filter(item => {
+                const matchCategory = 
+                    currentCategory === 'TODOS' || 
+                    (currentCategory === 'FAVORITOS' && favorites.includes(item.id)) ||
+                    item.categoria === currentCategory;
+
+                const matchTerm = 
+                    item.codigo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    item.artigo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    item.titulo.toLowerCase().includes(searchTerm.toLowerCase());
+
+                return matchCategory && matchTerm;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-slate-400 text-sm">
+                        <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
+                        <p>Nenhum enquadramento encontrado.</p>
+                    </div>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const isFav = favorites.includes(item.id);
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-3";
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start gap-2">
+                        <div>
+                            <span class="inline-block px-2 py-0.5 rounded bg-police-800 text-police-gold font-mono font-bold text-xs">${item.codigo}</span>
+                            <span class="text-xs font-bold text-slate-500 ml-1">${item.artigo}</span>
+                            <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded ml-1 font-semibold">${item.competencia}</span>
+                        </div>
+                        <button onclick="toggleFavorite('${item.id}')" class="text-lg ${isFav ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'} hover:scale-110 transition">
+                            <i class="fa-solid fa-star"></i>
+                        </button>
+                    </div>
+
+                    <h3 class="font-bold text-sm leading-snug">${item.titulo}</h3>
+
+                    <!-- Painel Orientador: Sem Abordagem (MBFT) -->
+                    <div class="p-2.5 rounded-lg text-xs bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300">
+                        <strong class="block text-[11px] uppercase tracking-wide"><i class="fa-solid fa-eye"></i> Autuação Sem Abordagem (MBFT):</strong>
+                        <span>${item.semAbordagem}</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] bg-slate-50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700/50">
+                        <div><span class="text-slate-400 block">Gravidade:</span> <strong>${item.gravidade} (${item.pontos} pts)</strong></div>
+                        <div><span class="text-slate-400 block">Valor:</span> <strong class="text-emerald-600 dark:text-emerald-400">${item.valor}</strong></div>
+                        <div><span class="text-slate-400 block">Fator Multiplicador:</span> <strong>${item.fator}</strong></div>
+                        <div><span class="text-slate-400 block">Infrator:</span> <strong>${item.infrator}</strong></div>
+                    </div>
+
+                    <div class="text-xs space-y-1">
+                        <p><strong class="text-police-gold">Medida Adm:</strong> ${item.medida}</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px]"><strong class="text-slate-400">Obs. Obrigatória do MBFT:</strong> ${item.obsObrigatoria}</p>
+                    </div>
+
+                    <div class="pt-1 flex justify-end">
+                        <button onclick="selectInfractionForAIT('${item.id}')" class="text-xs bg-police-gold/10 hover:bg-police-gold/20 text-police-gold font-bold px-3 py-1.5 rounded-lg border border-police-gold/30 flex items-center gap-1">
+                            <i class="fa-solid fa-pen-to-square"></i> Usar Minuta no Rascunho
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function populateAITSelect() {
+            const select = document.getElementById('aitCodeSelect');
+            select.innerHTML = '<option value="">-- Selecione a Infração --</option>';
+            database.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.id;
+                opt.textContent = `${item.codigo} - ${item.artigo} (${item.titulo.substring(0, 35)}...)`;
+                select.appendChild(opt);
+            });
+        }
+
+        function selectInfractionForAIT(id) {
+            switchTab('tab-ait');
+            document.getElementById('aitCodeSelect').value = id;
+            fillCodeDetails();
+        }
+
+        function fillCodeDetails() {
+            const id = document.getElementById('aitCodeSelect').value;
+            const item = database.find(i => i.id === id);
+            const modelSelect = document.getElementById('aitObsModelSelect');
+            const modelContainer = document.getElementById('modelObsContainer');
+
+            if (item) {
+                if (item.modelosObs && item.modelosObs.length > 0) {
+                    modelSelect.innerHTML = '<option value="">-- Selecione a versão de enquadramento --</option>';
+                    item.modelosObs.forEach((mod, idx) => {
+                        const opt = document.createElement('option');
+                        opt.value = mod;
+                        opt.textContent = `Opção ${idx + 1}: ${mod.substring(0, 50)}...`;
+                        modelSelect.appendChild(opt);
+                    });
+                    modelContainer.classList.remove('hidden');
+                } else {
+                    modelContainer.classList.add('hidden');
+                }
+
+                document.getElementById('aitObs').value = item.obsObrigatoria;
+            }
+        }
+
+        function applyObsModel() {
+            const selectedVal = document.getElementById('aitObsModelSelect').value;
+            if (selectedVal) {
+                document.getElementById('aitObs').value = selectedVal;
+            }
+        }
+
+        function copyObsText() {
+            const txt = document.getElementById('aitObs').value;
+            if (!txt) {
+                alert('O campo de observações está vazio.');
+                return;
+            }
+            navigator.clipboard.writeText(txt).then(() => {
+                alert('Texto de observação copiado! Cole no campo do sistema oficial do órgão autuador.');
+            });
+        }
+
+        function saveAITDraft() {
+            const placa = document.getElementById('aitPlaca').value.toUpperCase().trim();
+            const local = document.getElementById('aitLocal').value.trim();
+            const codeId = document.getElementById('aitCodeSelect').value;
+
+            if (!placa || !local || !codeId) {
+                alert('Preencha os campos obrigatórios: Placa, Local e Enquadramento.');
+                return;
+            }
+
+            const item = database.find(i => i.id === codeId);
+
+            const draft = {
+                id: Date.now(),
+                dataHora: new Date().toLocaleString('pt-BR'),
+                placa,
+                uf: document.getElementById('aitUf').value.toUpperCase().trim(),
+                local,
+                codigo: item.codigo,
+                artigo: item.artigo,
+                obs: document.getElementById('aitObs').value.trim()
+            };
+
+            drafts.unshift(draft);
+            localStorage.setItem('ait_drafts', JSON.stringify(drafts));
+            updateDraftBadge();
+            renderDrafts();
+            alert('Minuta salva com sucesso nos rascunhos!');
+            clearAITForm();
+        }
+
+        function renderDrafts() {
+            const container = document.getElementById('draftsContainer');
+            container.innerHTML = '';
+
+            if (drafts.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 text-slate-400 text-sm">
+                        <i class="fa-solid fa-folder-open text-2xl mb-2"></i>
+                        <p>Nenhuma minuta salva.</p>
+                    </div>`;
+                return;
+            }
+
+            drafts.forEach(draft => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-2";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-bold font-mono bg-police-gold text-police-900 px-2 py-0.5 rounded">${draft.placa} ${draft.uf ? '('+draft.uf+')' : ''}</span>
+                            <span class="text-[10px] text-slate-400 ml-2">${draft.dataHora}</span>
+                        </div>
+                        <button onclick="deleteDraft(${draft.id})" class="text-slate-400 hover:text-rose-500 text-xs"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div class="text-xs space-y-1">
+                        <p><strong>Local:</strong> ${draft.local}</p>
+                        <p><strong>Infração:</strong> ${draft.codigo} - ${draft.artigo}</p>
+                        <p class="text-slate-400 italic text-[11px] font-mono p-1 bg-slate-50 dark:bg-slate-900 rounded break-words">"${draft.obs}"</p>
+                    </div>
+
+                    <div class="flex gap-2 pt-1">
+                        <button onclick="copyDraftText('${draft.obs}')" class="flex-1 py-1.5 bg-police-gold text-police-900 font-bold text-xs rounded flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-copy"></i> Copiar Minuta
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function copyDraftText(txt) {
+            navigator.clipboard.writeText(txt).then(() => {
+                alert('Minuta copiada!');
+            });
+        }
+
+        function deleteDraft(id) {
+            drafts = drafts.filter(d => d.id !== id);
+            localStorage.setItem('ait_drafts', JSON.stringify(drafts));
+            updateDraftBadge();
+            renderDrafts();
+        }
+
+        function clearAllDrafts() {
+            if (confirm('Apagar todas as minutas salvas?')) {
+                drafts = [];
+                localStorage.removeItem('ait_drafts');
+                updateDraftBadge();
+                renderDrafts();
+            }
+        }
+
+        function updateDraftBadge() {
+            const badge = document.getElementById('draftCountBadge');
+            if (drafts.length > 0) {
+                badge.textContent = drafts.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        function clearAITForm() {
+            document.getElementById('aitForm').reset();
+            document.getElementById('modelObsContainer').classList.add('hidden');
+        }
+
+        function toggleFavorite(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(favId => favId !== id);
+            } else {
+                favorites.push(id);
+            }
+            localStorage.setItem('ait_favorites', JSON.stringify(favorites));
+            renderInfractions(document.getElementById('searchInput').value);
+        }
+
+        function filterCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-police-gold', 'text-police-gold', 'text-police-900', 'font-bold');
+                btn.classList.add('bg-white', 'dark:bg-slate-800');
+            });
+            event.target.classList.add('bg-police-gold', 'text-police-900', 'font-bold');
+            renderInfractions();
+        }
+
+        function clearSearchInput() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('clearSearch').classList.add('hidden');
+            renderInfractions();
+        }
+
+        function updateNetworkStatus() {
+            const badge = document.getElementById('netStatus');
+            if (navigator.onLine) {
+                badge.className = "inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE';
+            } else {
+                badge.className = "inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400"></span> OFFLINE';
+            }
+        }
+    </script>
+</body>
+</html>
