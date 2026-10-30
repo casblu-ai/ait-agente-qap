@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AIT Agente - Guia de Fiscalização de Trânsito</title>
+    <title>AIT Agente - Guia de Fiscalização DETRAN-RO</title>
 
-    <!-- PWA Web App Manifest dinâmico -->
+    <!-- Manifest Dinâmico do PWA -->
     <script>
         const manifestData = {
-            "name": "AIT Agente - Guia de Fiscalização",
+            "name": "AIT Agente - DETRAN-RO",
             "short_name": "AIT Agente",
             "start_url": "./",
             "display": "standalone",
-            "background_color": "#0f172a",
-            "theme_color": "#1e293b",
+            "background_color": "#1A1A1A",
+            "theme_color": "#F4C414",
             "icons": [{
-                "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23fbbf24'><path d='M256 32L32 96v160c0 128 96 224 224 256 128-32 224-128 224-256V96L256 32zm0 64l160 48v112c0 96-72 168-160 192-88-24-160-96-160-192V144l160-48z'/></svg>",
+                "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23F4C414'><path d='M256 32L32 96v160c0 128 96 224 224 256 128-32 224-128 224-256V96L256 32zm0 64l160 48v112c0 96-72 168-160 192-88-24-160-96-160-192V144l160-48z'/></svg>",
                 "sizes": "512x512",
                 "type": "image/svg+xml"
             }]
@@ -28,7 +28,7 @@
         document.head.appendChild(link);
     </script>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS com Paleta do DETRAN-RO -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,13 +36,16 @@
             theme: {
                 extend: {
                     colors: {
-                        police: {
-                            50: '#f0f4f8',
-                            100: '#d9e2ec',
-                            800: '#102a43',
-                            900: '#0b1b2b',
-                            gold: '#f59e0b',
-                            goldhover: '#d97706'
+                        detran: {
+                            yellow: '#F4C414',
+                            yellowHover: '#E0B000',
+                            green: '#38A148',
+                            greenHover: '#2E8B3A',
+                            red: '#E31B23',
+                            redHover: '#C81018',
+                            dark: '#1A1A1A',
+                            darkCard: '#242424',
+                            grayBg: '#F8FAFC'
                         }
                     }
                 }
@@ -50,37 +53,34 @@
         }
     </script>
 
-    <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tesseract.js CDN para OCR -->
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
 
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        @media print {
-            body * { visibility: hidden; }
-            #receiptPrintArea, #receiptPrintArea * { visibility: visible; }
-            #receiptPrintArea { position: absolute; left: 0; top: 0; width: 100%; }
-        }
     </style>
 </head>
-<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+<body class="bg-detran-grayBg dark:bg-detran-dark text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
 
-    <!-- Navbar Superior Fixa -->
-    <header class="sticky top-0 z-40 bg-police-900 text-white shadow-md border-b border-police-gold/30">
+    <!-- Cabeçalho Principal DETRAN-RO -->
+    <header class="sticky top-0 z-40 bg-detran-dark text-white shadow-lg border-b-4 border-detran-yellow">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="bg-police-gold text-police-900 font-black px-2 py-1 rounded text-[10px] tracking-wider uppercase">Consulta em Campo</div>
-                <h1 class="text-base font-bold tracking-wide flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-police-gold"></i> AIT AGENTE
-                </h1>
+                <div class="bg-detran-yellow text-detran-dark font-black px-2.5 py-1 rounded text-[11px] tracking-wider uppercase shadow-sm">
+                    DETRAN-RO
+                </div>
+                <div>
+                    <h1 class="text-base font-black tracking-wide flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-detran-yellow"></i> AIT AGENTE
+                    </h1>
+                    <span class="text-[10px] text-slate-400 block -mt-0.5">Guia de Fiscalização e Minutas MBFT</span>
+                </div>
             </div>
             
             <div class="flex items-center gap-2">
-                <span id="netStatus" class="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE
+                <span id="netStatus" class="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-detran-green/20 text-emerald-400 border border-detran-green/40 font-bold">
+                    <span class="w-2 h-2 rounded-full bg-detran-green animate-pulse"></span> ONLINE
                 </span>
                 
                 <button id="themeToggle" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">
@@ -88,25 +88,39 @@
                 </button>
             </div>
         </div>
+
+        <!-- Seletor de Órgão Autuador / Competência -->
+        <div class="bg-slate-900 px-4 py-2 border-t border-slate-800">
+            <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
+                <label for="competenciaSelect" class="text-xs font-bold text-detran-yellow flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-building-shield"></i> Base de Dados do Órgão:
+                </label>
+                <select id="competenciaSelect" onchange="switchCompetencia(this.value)" class="bg-detran-dark text-white font-bold px-3 py-1.5 rounded-lg border border-detran-yellow/50 text-xs focus:outline-none focus:ring-2 focus:ring-detran-yellow">
+                    <option value="ESTADUAL">ESTADUAL (Detran / PM / DER)</option>
+                    <option value="MUNICIPAL">MUNICIPAL (Sec. Trânsito / Guarda)</option>
+                    <option value="TODOS">TODOS OS ENQUADRAMENTOS</option>
+                </select>
+            </div>
+        </div>
     </header>
 
-    <!-- Aviso do Sistema -->
-    <div class="bg-amber-500/10 border-b border-amber-500/30 px-4 py-2 text-center text-[11px] text-amber-600 dark:text-amber-400 font-medium">
-        <i class="fa-solid fa-circle-info mr-1"></i> Ferramenta de apoio para consulta de enquadramentos do MBFT. O AIT oficial deve ser lavrado no sistema do órgão autuador.
+    <!-- Banner Informativo -->
+    <div class="bg-detran-yellow/10 border-b border-detran-yellow/30 px-4 py-1.5 text-center text-[11px] text-amber-700 dark:text-amber-400 font-medium">
+        <i class="fa-solid fa-circle-info mr-1"></i> Ferramenta de apoio operacional. As autuações devem ser registradas no sistema oficial do órgão.
     </div>
 
-    <!-- Navegação de Abas -->
-    <nav class="bg-police-800 border-b border-slate-700 text-slate-300 text-xs font-semibold sticky top-[57px] z-30">
+    <!-- Barra de Navegação -->
+    <nav class="bg-slate-900 border-b border-slate-800 text-slate-300 text-xs font-semibold sticky top-[102px] z-30">
         <div class="max-w-4xl mx-auto flex justify-around">
-            <button onclick="switchTab('tab-search')" id="btn-tab-search" class="tab-btn py-3 px-2 border-b-2 border-police-gold text-police-gold flex items-center gap-1.5 flex-1 justify-center">
+            <button onclick="switchTab('tab-search')" id="btn-tab-search" class="tab-btn py-3 px-2 border-b-2 border-detran-yellow text-detran-yellow flex items-center gap-1.5 flex-1 justify-center font-bold">
                 <i class="fa-solid fa-book-bookmark"></i> Enquadramentos MBFT
             </button>
             <button onclick="switchTab('tab-ait')" id="btn-tab-ait" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center">
                 <i class="fa-solid fa-file-pen"></i> Rascunho / Minuta
             </button>
             <button onclick="switchTab('tab-drafts')" id="btn-tab-drafts" class="tab-btn py-3 px-2 border-b-2 border-transparent hover:text-white flex items-center gap-1.5 flex-1 justify-center relative">
-                <i class="fa-solid fa-folder-closed"></i> Rascunhos Salvos
-                <span id="draftCountBadge" class="bg-police-gold text-police-900 text-[10px] px-1.5 py-0.2 rounded-full font-bold ml-0.5 hidden">0</span>
+                <i class="fa-solid fa-folder-closed"></i> Minutas Salvas
+                <span id="draftCountBadge" class="bg-detran-yellow text-detran-dark text-[10px] px-1.5 py-0.2 rounded-full font-black ml-0.5 hidden">0</span>
             </button>
         </div>
     </nav>
@@ -114,135 +128,125 @@
     <!-- Conteúdo Principal -->
     <main class="flex-1 max-w-4xl w-full mx-auto p-4 space-y-4">
 
-        <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS MBFT -->
+        <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS -->
         <section id="tab-search" class="tab-content space-y-4">
             <div class="space-y-2">
                 <div class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, característica, celular..."
-                        class="w-full pl-10 pr-10 py-3 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-police-gold text-sm">
-                    <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, celular, rebaixado..."
+                        class="w-full pl-10 pr-10 py-3 bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-detran-yellow text-sm">
+                    <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-200">
                         <i class="fa-solid fa-circle-xmark text-lg"></i>
                     </button>
                 </div>
 
-                <!-- Filtros Rápidos -->
+                <!-- Categorias -->
                 <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
-                    <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-police-gold text-police-900 font-bold whitespace-nowrap shadow-sm">Todos</button>
-                    <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Alcoolemia</button>
-                    <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">CNH / Condutor</button>
-                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Veículo / Alterações</button>
-                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap">Estacionamento</button>
-                    <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 whitespace-nowrap text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> Favoritos</button>
+                    <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-detran-yellow text-detran-dark font-black whitespace-nowrap shadow-sm">Todos</button>
+                    <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 whitespace-nowrap">Alcoolemia</button>
+                    <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 whitespace-nowrap">CNH / Condutor</button>
+                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 whitespace-nowrap">Veículo / Alterações</button>
+                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 whitespace-nowrap">Estacionamento</button>
+                    <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-white dark:bg-detran-darkCard border border-slate-300 dark:border-slate-700 whitespace-nowrap text-amber-500 font-bold"><i class="fa-solid fa-star"></i> Favoritos</button>
                 </div>
             </div>
 
-            <!-- Lista de Resultados -->
-            <div id="infractionsList" class="space-y-3">
-                <!-- Injetado via JS -->
-            </div>
+            <!-- Lista de Enquadramentos -->
+            <div id="infractionsList" class="space-y-3"></div>
         </section>
 
-        <!-- ABA 2: GERADOR DE RASCUNHO / MINUTA DE AIT -->
+        <!-- ABA 2: RASCUNHO E MINUTA DE AIT -->
         <section id="tab-ait" class="tab-content hidden space-y-4">
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
+            <div class="bg-white dark:bg-detran-darkCard p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
                 <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-2">
                     <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-file-pen text-police-gold text-xl"></i>
-                        <h2 class="font-bold text-base">Preparar Minuta / Rascunho para o Sistema Oficial</h2>
+                        <i class="fa-solid fa-file-pen text-detran-yellow text-xl"></i>
+                        <h2 class="font-bold text-base">Preparar Minuta para o Sistema Oficial</h2>
                     </div>
-                    <button onclick="clearAITForm()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-can"></i> Limpar</button>
+                    <button onclick="clearAITForm()" class="text-xs text-detran-red hover:underline font-bold"><i class="fa-solid fa-trash-can"></i> Limpar</button>
                 </div>
 
                 <form id="aitForm" class="space-y-3" onsubmit="event.preventDefault();">
                     
                     <!-- Scanner OCR de Placa -->
-                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-dashed border-police-gold/50 space-y-2">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-police-gold flex items-center gap-1.5">
-                                <i class="fa-solid fa-camera"></i> Escanear Placa do Veículo (OCR)
-                            </span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <label class="flex-1 cursor-pointer bg-police-800 hover:bg-police-900 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow transition">
-                                <i class="fa-solid fa-camera-retro"></i> Capturar Fotografia
-                                <input type="file" id="ocrInput" accept="image/*" capture="environment" class="hidden" onchange="processOCRImage(this)">
-                            </label>
-                        </div>
+                    <div class="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-lg border border-dashed border-detran-yellow/60 space-y-2">
+                        <span class="text-xs font-bold text-detran-yellow flex items-center gap-1.5">
+                            <i class="fa-solid fa-camera"></i> Escanear Placa (OCR)
+                        </span>
+                        <label class="cursor-pointer bg-detran-dark hover:bg-slate-800 text-white text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-2 shadow border border-detran-yellow/30">
+                            <i class="fa-solid fa-camera-retro text-detran-yellow"></i> Tirar Foto da Placa
+                            <input type="file" id="ocrInput" accept="image/*" capture="environment" class="hidden" onchange="processOCRImage(this)">
+                        </label>
                         
                         <div id="ocrProgress" class="hidden space-y-1">
                             <div class="flex justify-between text-[10px] text-slate-400">
-                                <span id="ocrStatusText">Reconhecendo texto...</span>
+                                <span id="ocrStatusText">Processando imagem...</span>
                                 <span id="ocrPercent">0%</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5 overflow-hidden">
-                                <div id="ocrProgressBar" class="bg-police-gold h-1.5 rounded-full w-0 transition-all duration-300"></div>
+                                <div id="ocrProgressBar" class="bg-detran-yellow h-1.5 rounded-full w-0 transition-all duration-300"></div>
                             </div>
                         </div>
-
-                        <div id="ocrResultText" class="hidden text-[11px] p-2 bg-white dark:bg-slate-800 rounded border border-slate-300 dark:border-slate-700 max-h-20 overflow-y-auto font-mono"></div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <label class="block text-xs font-semibold mb-1">Placa do Veículo *</label>
-                            <input type="text" id="aitPlaca" placeholder="ABC1D23" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                            <label class="block text-xs font-bold mb-1">Placa *</label>
+                            <input type="text" id="aitPlaca" placeholder="ABC1D23" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm uppercase font-mono font-bold">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold mb-1">UF do Veículo</label>
-                            <input type="text" id="aitUf" placeholder="Ex: RO, SP" maxlength="2" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm uppercase">
+                            <label class="block text-xs font-bold mb-1">UF do Veículo</label>
+                            <input type="text" id="aitUf" placeholder="RO" maxlength="2" value="RO" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm uppercase font-bold">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Local da Infração (Rua/Av/Nº) *</label>
-                        <input type="text" id="aitLocal" placeholder="Ex: Av. Jorge Teixeira, nº 1200" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
+                        <label class="block text-xs font-bold mb-1">Local da Infração *</label>
+                        <input type="text" id="aitLocal" placeholder="Ex: Av. Jorge Teixeira, nº 1200 - Porto Velho" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Enquadramento / Código da Infração *</label>
-                        <select id="aitCodeSelect" onchange="fillCodeDetails()" class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm">
+                        <label class="block text-xs font-bold mb-1">Enquadramento / Código *</label>
+                        <select id="aitCodeSelect" onchange="fillCodeDetails()" class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-medium">
                             <option value="">-- Selecione a Infração --</option>
                         </select>
                     </div>
 
-                    <!-- Seletor de Minutas / Versões de Observação -->
+                    <!-- Opções / Minutas Específicas do Enquadramento -->
                     <div id="modelObsContainer" class="hidden space-y-1">
-                        <label class="block text-xs font-bold text-police-gold"><i class="fa-solid fa-list-check"></i> Selecione o Modelo / Versão de Observação:</label>
-                        <select id="aitObsModelSelect" onchange="applyObsModel()" class="w-full p-2 bg-amber-500/10 border border-amber-500/40 text-amber-700 dark:text-amber-300 rounded text-xs">
-                            <option value="">-- Escolha a versão de enquadramento --</option>
+                        <label class="block text-xs font-bold text-detran-yellow"><i class="fa-solid fa-list-check"></i> Selecione a Versão da Observação:</label>
+                        <select id="aitObsModelSelect" onchange="applyObsModel()" class="w-full p-2.5 bg-amber-500/10 border border-amber-500/40 text-amber-800 dark:text-amber-300 rounded-lg text-xs font-medium">
+                            <option value="">-- Escolha o modelo específico --</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-semibold mb-1">Campo de Observações do AIT (Pronto para copiar)</label>
-                        <textarea id="aitObs" rows="4" placeholder="O texto preenchido aqui servirá de minuta para colagem no sistema de autuação do órgão..." class="w-full p-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded text-sm font-mono"></textarea>
+                        <label class="block text-xs font-bold mb-1">Campo de Observações da Minuta (Pronto para copiar)</label>
+                        <textarea id="aitObs" rows="4" placeholder="Minuta do texto a ser colado no sistema de autuação do órgão..." class="w-full p-2.5 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-mono"></textarea>
                     </div>
 
                     <div class="flex gap-2 pt-2">
-                        <button type="button" onclick="copyObsText()" class="flex-1 py-2.5 bg-police-gold hover:bg-police-goldhover text-police-900 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
-                            <i class="fa-solid fa-copy"></i> Copiar Observação
+                        <button type="button" onclick="copyObsText()" class="flex-1 py-3 bg-detran-yellow hover:bg-detran-yellowHover text-detran-dark font-black rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
+                            <i class="fa-solid fa-copy"></i> Copiar Minuta
                         </button>
-                        <button type="button" onclick="saveAITDraft()" class="flex-1 py-2.5 bg-police-800 hover:bg-police-900 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow">
-                            <i class="fa-solid fa-floppy-disk"></i> Salvar Rascunho
+                        <button type="button" onclick="saveAITDraft()" class="flex-1 py-3 bg-detran-dark hover:bg-slate-800 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 shadow border border-detran-yellow/40">
+                            <i class="fa-solid fa-floppy-disk text-detran-yellow"></i> Salvar Minuta
                         </button>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- ABA 3: RASCUNHOS SALVOS -->
+        <!-- ABA 3: MINUTAS SALVAS -->
         <section id="tab-drafts" class="tab-content hidden space-y-4">
             <div class="flex justify-between items-center">
                 <h2 class="font-bold text-base flex items-center gap-2">
-                    <i class="fa-solid fa-folder-open text-police-gold"></i> Rascunhos de Minutas Salvos
+                    <i class="fa-solid fa-folder-open text-detran-yellow"></i> Minutas de Rascunho Salvas
                 </h2>
-                <button onclick="clearAllDrafts()" class="text-xs text-rose-500 hover:underline"><i class="fa-solid fa-trash-arrow-up"></i> Excluir Todos</button>
+                <button onclick="clearAllDrafts()" class="text-xs text-detran-red hover:underline font-bold"><i class="fa-solid fa-trash-arrow-up"></i> Excluir Todas</button>
             </div>
 
-            <div id="draftsContainer" class="space-y-3">
-                <!-- Injetado via JS -->
-            </div>
+            <div id="draftsContainer" class="space-y-3"></div>
         </section>
 
     </main>
@@ -251,25 +255,46 @@
     <script>
         let database = [];
         let currentCategory = 'TODOS';
+        let currentCompetencia = localStorage.getItem('ait_competencia_pref') || 'ESTADUAL';
         let favorites = JSON.parse(localStorage.getItem('ait_favorites')) || [];
         let drafts = JSON.parse(localStorage.getItem('ait_drafts')) || [];
 
-        // Carregar JSON do GitHub / Netlify
-        async function loadInfractionsFromJSON() {
+        // Carregamento dinâmico conforme seleção do Órgão Autuador
+        async function loadInfractions(competencia) {
+            let jsonFile = './infracoes_estadual.json';
+            
+            if (competencia === 'MUNICIPAL') {
+                jsonFile = './infracoes_municipal.json';
+            } else if (competencia === 'TODOS') {
+                jsonFile = './infracoes.json';
+            }
+
             try {
-                const response = await fetch('./infracoes.json');
+                const response = await fetch(jsonFile);
                 if (response.ok) {
                     database = await response.json();
-                    renderInfractions();
-                    populateAITSelect();
+                } else {
+                    // Fallback se o arquivo específico ainda não existir
+                    const fallback = await fetch('./infracoes.json');
+                    if (fallback.ok) database = await fallback.json();
                 }
             } catch (error) {
-                console.error('Falha ao carregar infracoes.json:', error);
+                console.error('Falha ao carregar a base de infrações:', error);
             }
+
+            renderInfractions();
+            populateAITSelect();
+        }
+
+        function switchCompetencia(val) {
+            currentCompetencia = val;
+            localStorage.setItem('ait_competencia_pref', val);
+            loadInfractions(val);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadInfractionsFromJSON();
+            document.getElementById('competenciaSelect').value = currentCompetencia;
+            loadInfractions(currentCompetencia);
             updateDraftBadge();
             renderDrafts();
 
@@ -291,14 +316,14 @@
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('border-police-gold', 'text-police-gold');
+                el.classList.remove('border-detran-yellow', 'text-detran-yellow', 'font-bold');
                 el.classList.add('border-transparent');
             });
 
             document.getElementById(tabId).classList.remove('hidden');
             const activeBtn = document.getElementById(`btn-${tabId}`);
             activeBtn.classList.remove('border-transparent');
-            activeBtn.classList.add('border-police-gold', 'text-police-gold');
+            activeBtn.classList.add('border-detran-yellow', 'text-detran-yellow', 'font-bold');
         }
 
         function renderInfractions(searchTerm = '') {
@@ -322,23 +347,25 @@
             if (filtered.length === 0) {
                 container.innerHTML = `
                     <div class="text-center py-8 text-slate-400 text-sm">
-                        <i class="fa-solid fa-triangle-exclamation text-2xl mb-2"></i>
-                        <p>Nenhum enquadramento encontrado.</p>
+                        <i class="fa-solid fa-triangle-exclamation text-2xl mb-2 text-detran-yellow"></i>
+                        <p>Nenhum enquadramento encontrado para a seleção atual.</p>
                     </div>`;
                 return;
             }
 
             filtered.forEach(item => {
                 const isFav = favorites.includes(item.id);
+                const isGravissima = item.gravidade.includes('Gravíssima');
+                
                 const card = document.createElement('div');
-                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-3";
+                card.className = "bg-white dark:bg-detran-darkCard p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-3";
                 
                 card.innerHTML = `
                     <div class="flex justify-between items-start gap-2">
-                        <div>
-                            <span class="inline-block px-2 py-0.5 rounded bg-police-800 text-police-gold font-mono font-bold text-xs">${item.codigo}</span>
-                            <span class="text-xs font-bold text-slate-500 ml-1">${item.artigo}</span>
-                            <span class="text-[10px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded ml-1 font-semibold">${item.competencia}</span>
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                            <span class="inline-block px-2.5 py-0.5 rounded bg-detran-dark text-detran-yellow font-mono font-black text-xs">${item.codigo}</span>
+                            <span class="text-xs font-bold text-slate-600 dark:text-slate-300">${item.artigo}</span>
+                            <span class="text-[10px] bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-1.5 py-0.5 rounded font-bold">${item.competencia}</span>
                         </div>
                         <button onclick="toggleFavorite('${item.id}')" class="text-lg ${isFav ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'} hover:scale-110 transition">
                             <i class="fa-solid fa-star"></i>
@@ -347,26 +374,26 @@
 
                     <h3 class="font-bold text-sm leading-snug">${item.titulo}</h3>
 
-                    <!-- Painel Orientador: Sem Abordagem (MBFT) -->
-                    <div class="p-2.5 rounded-lg text-xs bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300">
-                        <strong class="block text-[11px] uppercase tracking-wide"><i class="fa-solid fa-eye"></i> Autuação Sem Abordagem (MBFT):</strong>
+                    <!-- Alerta do MBFT: Autuação Sem Abordagem -->
+                    <div class="p-2.5 rounded-lg text-xs bg-detran-yellow/10 border border-detran-yellow/40 text-amber-800 dark:text-amber-300">
+                        <strong class="block text-[11px] uppercase tracking-wide font-black"><i class="fa-solid fa-eye"></i> Autuação Sem Abordagem (MBFT):</strong>
                         <span>${item.semAbordagem}</span>
                     </div>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] bg-slate-50 dark:bg-slate-900/50 p-2 rounded-lg border border-slate-100 dark:border-slate-700/50">
-                        <div><span class="text-slate-400 block">Gravidade:</span> <strong>${item.gravidade} (${item.pontos} pts)</strong></div>
-                        <div><span class="text-slate-400 block">Valor:</span> <strong class="text-emerald-600 dark:text-emerald-400">${item.valor}</strong></div>
-                        <div><span class="text-slate-400 block">Fator Multiplicador:</span> <strong>${item.fator}</strong></div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] bg-slate-50 dark:bg-slate-900/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">
+                        <div><span class="text-slate-400 block">Gravidade:</span> <strong class="${isGravissima ? 'text-detran-red font-black' : ''}">${item.gravidade} (${item.pontos} pts)</strong></div>
+                        <div><span class="text-slate-400 block">Valor:</span> <strong class="text-detran-green font-black">${item.valor}</strong></div>
+                        <div><span class="text-slate-400 block">Fator:</span> <strong>${item.fator}</strong></div>
                         <div><span class="text-slate-400 block">Infrator:</span> <strong>${item.infrator}</strong></div>
                     </div>
 
                     <div class="text-xs space-y-1">
-                        <p><strong class="text-police-gold">Medida Adm:</strong> ${item.medida}</p>
-                        <p class="text-slate-500 dark:text-slate-400 text-[11px]"><strong class="text-slate-400">Obs. Obrigatória do MBFT:</strong> ${item.obsObrigatoria}</p>
+                        <p><strong class="text-detran-yellow">Medida Adm:</strong> ${item.medida}</p>
+                        <p class="text-slate-500 dark:text-slate-400 text-[11px]"><strong class="text-slate-400">Obs. MBFT:</strong> ${item.obsObrigatoria}</p>
                     </div>
 
                     <div class="pt-1 flex justify-end">
-                        <button onclick="selectInfractionForAIT('${item.id}')" class="text-xs bg-police-gold/10 hover:bg-police-gold/20 text-police-gold font-bold px-3 py-1.5 rounded-lg border border-police-gold/30 flex items-center gap-1">
+                        <button onclick="selectInfractionForAIT('${item.id}')" class="text-xs bg-detran-yellow text-detran-dark font-black px-3 py-1.5 rounded-lg shadow hover:bg-detran-yellowHover flex items-center gap-1.5">
                             <i class="fa-solid fa-pen-to-square"></i> Usar Minuta no Rascunho
                         </button>
                     </div>
@@ -400,7 +427,7 @@
 
             if (item) {
                 if (item.modelosObs && item.modelosObs.length > 0) {
-                    modelSelect.innerHTML = '<option value="">-- Selecione a versão de enquadramento --</option>';
+                    modelSelect.innerHTML = '<option value="">-- Escolha o modelo específico --</option>';
                     item.modelosObs.forEach((mod, idx) => {
                         const opt = document.createElement('option');
                         opt.value = mod;
@@ -430,7 +457,7 @@
                 return;
             }
             navigator.clipboard.writeText(txt).then(() => {
-                alert('Texto de observação copiado! Cole no campo do sistema oficial do órgão autuador.');
+                alert('Minuta copiada com sucesso!');
             });
         }
 
@@ -440,7 +467,7 @@
             const codeId = document.getElementById('aitCodeSelect').value;
 
             if (!placa || !local || !codeId) {
-                alert('Preencha os campos obrigatórios: Placa, Local e Enquadramento.');
+                alert('Preencha a Placa, o Local e a Infração.');
                 return;
             }
 
@@ -461,7 +488,7 @@
             localStorage.setItem('ait_drafts', JSON.stringify(drafts));
             updateDraftBadge();
             renderDrafts();
-            alert('Minuta salva com sucesso nos rascunhos!');
+            alert('Minuta salva com sucesso!');
             clearAITForm();
         }
 
@@ -472,7 +499,7 @@
             if (drafts.length === 0) {
                 container.innerHTML = `
                     <div class="text-center py-8 text-slate-400 text-sm">
-                        <i class="fa-solid fa-folder-open text-2xl mb-2"></i>
+                        <i class="fa-solid fa-folder-open text-2xl mb-2 text-detran-yellow"></i>
                         <p>Nenhuma minuta salva.</p>
                     </div>`;
                 return;
@@ -480,24 +507,24 @@
 
             drafts.forEach(draft => {
                 const card = document.createElement('div');
-                card.className = "bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-2";
+                card.className = "bg-white dark:bg-detran-darkCard p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 space-y-2";
                 card.innerHTML = `
                     <div class="flex justify-between items-start">
                         <div>
-                            <span class="text-xs font-bold font-mono bg-police-gold text-police-900 px-2 py-0.5 rounded">${draft.placa} ${draft.uf ? '('+draft.uf+')' : ''}</span>
+                            <span class="text-xs font-black font-mono bg-detran-yellow text-detran-dark px-2 py-0.5 rounded">${draft.placa} ${draft.uf ? '('+draft.uf+')' : ''}</span>
                             <span class="text-[10px] text-slate-400 ml-2">${draft.dataHora}</span>
                         </div>
-                        <button onclick="deleteDraft(${draft.id})" class="text-slate-400 hover:text-rose-500 text-xs"><i class="fa-solid fa-trash-can"></i></button>
+                        <button onclick="deleteDraft(${draft.id})" class="text-slate-400 hover:text-detran-red text-xs"><i class="fa-solid fa-trash-can"></i></button>
                     </div>
 
                     <div class="text-xs space-y-1">
                         <p><strong>Local:</strong> ${draft.local}</p>
                         <p><strong>Infração:</strong> ${draft.codigo} - ${draft.artigo}</p>
-                        <p class="text-slate-400 italic text-[11px] font-mono p-1 bg-slate-50 dark:bg-slate-900 rounded break-words">"${draft.obs}"</p>
+                        <p class="text-slate-400 italic text-[11px] font-mono p-2 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 break-words">"${draft.obs}"</p>
                     </div>
 
                     <div class="flex gap-2 pt-1">
-                        <button onclick="copyDraftText('${draft.obs}')" class="flex-1 py-1.5 bg-police-gold text-police-900 font-bold text-xs rounded flex items-center justify-center gap-1">
+                        <button onclick="copyDraftText('${draft.obs}')" class="flex-1 py-2 bg-detran-yellow text-detran-dark font-black text-xs rounded-lg shadow flex items-center justify-center gap-1">
                             <i class="fa-solid fa-copy"></i> Copiar Minuta
                         </button>
                     </div>
@@ -540,6 +567,7 @@
 
         function clearAITForm() {
             document.getElementById('aitForm').reset();
+            document.getElementById('aitUf').value = 'RO';
             document.getElementById('modelObsContainer').classList.add('hidden');
         }
 
@@ -556,10 +584,10 @@
         function filterCategory(cat) {
             currentCategory = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.classList.remove('bg-police-gold', 'text-police-gold', 'text-police-900', 'font-bold');
-                btn.classList.add('bg-white', 'dark:bg-slate-800');
+                btn.classList.remove('bg-detran-yellow', 'text-detran-dark', 'font-black');
+                btn.classList.add('bg-white', 'dark:bg-detran-darkCard');
             });
-            event.target.classList.add('bg-police-gold', 'text-police-900', 'font-bold');
+            event.target.classList.add('bg-detran-yellow', 'text-detran-dark', 'font-black');
             renderInfractions();
         }
 
@@ -572,10 +600,10 @@
         function updateNetworkStatus() {
             const badge = document.getElementById('netStatus');
             if (navigator.onLine) {
-                badge.className = "inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
-                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE';
+                badge.className = "inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-detran-green/20 text-emerald-400 border border-detran-green/40 font-bold";
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-detran-green animate-pulse"></span> ONLINE';
             } else {
-                badge.className = "inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                badge.className = "inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold";
                 badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-amber-400"></span> OFFLINE';
             }
         }
