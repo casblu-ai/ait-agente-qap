@@ -1,0 +1,467 @@
+[
+  {
+    "id": "art162I",
+    "codigo": "501-00",
+    "artigo": "Art. 162, I",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo sem possuir CNH, Permissão para Dirigir ou ACC",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x",
+    "infrator": "Condutor / Proprietário",
+    "medida": "Retenção do veículo até a apresentação de condutor habilitado",
+    "semAbordagem": "NÃO (Exige identificação qualificada do condutor abordado)",
+    "obsObrigatoria": "Informar que o condutor declarou não possuir habilitação e a confirmação via consulta ao sistema.",
+    "modelosObs": [
+      "Condutor abordado e identificado no local, declarou não possuir CNH/PPD/ACC. Fato confirmado em consulta ao sistema RENACH/DETRAN. Veículo retido e entregue ao condutor habilitado Sr(a) [NOME], CNH nº [NÚMERO]."
+    ]
+  },
+  {
+    "id": "art162II",
+    "codigo": "502-30",
+    "artigo": "Art. 162, II",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo com CNH, Permissão para Dirigir ou ACC cassada ou com direito de dirigir suspenso",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e retenção do veículo",
+    "semAbordagem": "NÃO (Exige abordagem para constatação do condutor com bloqueio ativo)",
+    "obsObrigatoria": "Indicar o número do processo administrativo de suspensão/cassação constante na pesquisa do sistema.",
+    "modelosObs": [
+      "Condutor abordado em fiscalização. Consulta ao sistema RENACH/DETRAN constatou suspensão do direito de dirigir ativa referente ao Processo Administrativo nº [Nº PROCESSO]. CNH recolhida sob Termo nº [Nº]."
+    ]
+  },
+  {
+    "id": "art162III",
+    "codigo": "503-10",
+    "artigo": "Art. 162, III",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo com CNH ou PPD de categoria diferente da do veículo que esteja conduzindo",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 586,94",
+    "fator": "2x",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até a apresentação de condutor habilitado",
+    "semAbordagem": "NÃO (Exige identificação do condutor e do veículo conduzido)",
+    "obsObrigatoria": "Indicar a categoria possuída pelo condutor e a categoria exigida para o veículo fiscalizado.",
+    "modelosObs": [
+      "Condutor habilitado na Categoria [B] conduzindo veículo de categoria diferente [MOTOCICLETA / CAT A], em desacordo com a habilitação registrada no sistema."
+    ]
+  },
+  {
+    "id": "art162V",
+    "codigo": "505-80",
+    "artigo": "Art. 162, V",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo com validade da CNH vencida há mais de 30 dias",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e retenção do veículo",
+    "semAbordagem": "NÃO (Exige conferência da CNH ou documento do condutor)",
+    "obsObrigatoria": "Registrar a data exata do vencimento da CNH do condutor.",
+    "modelosObs": [
+      "Condutor abordado conduzindo o veículo com a CNH nº [NÚMERO] vencida em [DATA DE VENCIMENTO], transcorrido prazo superior a 30 dias da data de validade do documento."
+    ]
+  },
+  {
+    "id": "art162VI",
+    "codigo": "504-00",
+    "artigo": "Art. 162, VI",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo sem usar lentes corretivas de visão, aparelho auditivo ou prótese física obrigatória",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até a sanção da irregularidade ou apresentação de condutor habilitado",
+    "semAbordagem": "NÃO (Exige abordagem e constatação presencial do descumprimento do código restritivo)",
+    "obsObrigatoria": "Mencionar o código de restrição médica constante na CNH (ex: Letra A - Lentes corretivas) e a ausência do uso pelo condutor no momento da abordagem.",
+    "modelosObs": [
+      "Condutor possui CNH com restrição médica código 'A' (uso obrigatório de lentes corretivas), porém conduzia o veículo sem fazer uso de óculos ou lentes de contato durante a abordagem."
+    ]
+  },
+  {
+    "id": "art163",
+    "codigo": "506-60",
+    "artigo": "Art. 163",
+    "competencia": "Estadual / Detran",
+    "categoria": "PROPRIETÁRIO",
+    "titulo": "Entregar a direção do veículo a pessoa não habilitada, com CNH cassada/suspensa ou de categoria diferente",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x",
+    "infrator": "Proprietário",
+    "medida": "Retenção do veículo",
+    "semAbordagem": "NÃO (Exige identificação presencial do proprietário entregando diretamente o veículo)",
+    "obsObrigatoria": "Vincular a autuação ao Auto de Infração lavrado contra o condutor não habilitado/impedido.",
+    "modelosObs": [
+      "Proprietário do veículo presente no local da abordagem entregou a direção do veículo ao condutor não habilitado Sr(a) [NOME], conforme AIT de condutor nº [Nº AIT] lavrado nesta mesma data."
+    ]
+  },
+  {
+    "id": "art164",
+    "codigo": "507-40",
+    "artigo": "Art. 164",
+    "competencia": "Estadual / Detran",
+    "categoria": "PROPRIETÁRIO",
+    "titulo": "Permitir que pessoa não habilitada, com CNH cassada/suspensa ou categoria diferente tome posse do veículo",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x",
+    "infrator": "Proprietário",
+    "medida": "Retenção do veículo",
+    "semAbordagem": "SIM (Aplicável quando o proprietário não está presente no local, mas permitiu a posse da chave/veículo)",
+    "obsObrigatoria": "Mencionar o AIT do condutor inabilitado/impedido e a condição do proprietário ausente que permitiu a posse.",
+    "modelosObs": [
+      "Proprietário ausente permitiu a posse e circulação do veículo ao condutor inabilitado Sr(a) [NOME], autuado no AIT nº [Nº AIT]."
+    ]
+  },
+  {
+    "id": "art165",
+    "codigo": "757-90",
+    "artigo": "Art. 165",
+    "competencia": "Estadual / Detran",
+    "categoria": "ALCOOLEMIA",
+    "titulo": "Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 2.934,70",
+    "fator": "10x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e retenção do veículo",
+    "semAbordagem": "NÃO (Exige realização de teste de etilômetro ou laudo de constatação de sinais)",
+    "obsObrigatoria": "Obrigatório registrar marca/modelo e nº de série do etilômetro, valor medido (mg/L) e considerado, ou anexar o Termo de Constatação de Sinais.",
+    "modelosObs": [
+      "Submetido ao teste de etilômetro nº [Nº TESTE], aparelho marca [MARCA] nº [SÉRIE], obtendo resultado medido de [VALOR] mg/L, valor considerado de [VALOR] mg/L. CNH recolhida sob Termo nº [Nº].",
+      "Condutor apresentou sinais visíveis de alteração psicomotora (hálito etílico, sonolência, desorientação e agressividade), atestados no Termo de Constatação de Sinais nº [Nº] anexo ao AIT."
+    ]
+  },
+  {
+    "id": "art165A",
+    "codigo": "758-70",
+    "artigo": "Art. 165-A",
+    "competencia": "Estadual / Detran",
+    "categoria": "ALCOOLEMIA",
+    "titulo": "Recusar-se a ser submetido a teste, exame clínico ou perícia de alcoolemia",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 2.934,70",
+    "fator": "10x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e retenção do veículo",
+    "semAbordagem": "NÃO (Exige a recusa formalizada do condutor abordado)",
+    "obsObrigatoria": "Descrever a oferta expressa do teste, o modelo/série do etilômetro disponibilizado e a recusa verbal ou atitudinal do condutor.",
+    "modelosObs": [
+      "Oferecido expressamente ao condutor o teste de etilômetro em aparelho marca [MARCA] nº de série [SÉRIE], tendo o mesmo recusado submeter-se ao procedimento. CNH recolhida sob Termo nº [Nº]."
+    ]
+  },
+  {
+    "id": "art167",
+    "codigo": "518-51",
+    "artigo": "Art. 167",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Deixar o condutor ou passageiro de usar o cinto de segurança",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até colocação do cinto pelo infrator",
+    "semAbordagem": "SIM (Permitida a autuação sem abordagem se constatado visualmente na via em movimento)",
+    "obsObrigatoria": "Informar especificamente se a infração foi cometida pelo condutor ou pelo passageiro (indicar posição no veículo).",
+    "modelosObs": [
+      "OPÇÃO 1 (CONDUTOR SEM CINTO): Autuação sem abordagem. Constatado condutor transitando na via pública sem fazer uso do cinto de segurança obrigatório.",
+      "OPÇÃO 2 (PASSAGEIRO SEM CINTO): Veículo em circulação transportando passageiro do banco dianteiro/traseiro sem utilizar o cinto de segurança."
+    ]
+  },
+  {
+    "id": "art168",
+    "codigo": "519-30",
+    "artigo": "Art. 168",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Transportar crianças em veículo automotor sem observância das normas de segurança estabelecidas (Cadeirinha / Bebê Conforto / Assento)",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até que a irregularidade seja sanada",
+    "semAbordagem": "NÃO (Exige abordagem e verificação da idade/dispositivo da criança)",
+    "obsObrigatoria": "Informar a idade aproximada/declarada da criança e a ausência do dispositivo de retenção equivalente (Bebê Conforto, Cadeirinha ou Assento de Elevação).",
+    "modelosObs": [
+      "Veículo abordado transportando criança de [X] anos no banco traseiro sem utilizar o dispositivo de retenção adequado (Cadeirinha/Assento de Elevação), em desacordo com a Resolução do CONTRAN."
+    ]
+  },
+  {
+    "id": "art173",
+    "codigo": "525-80",
+    "artigo": "Art. 173",
+    "competencia": "Estadual / Detran",
+    "categoria": "CIRCULACAO",
+    "titulo": "Disputar corrida (Racha / Pega)",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 2.934,70",
+    "fator": "10x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e remoção do veículo",
+    "semAbordagem": "SIM (Desde que seja possível identificar visualmente a disputa e a placa dos veículos)",
+    "obsObrigatoria": "Detalhar a conduta dos veículos emparelhados em alta velocidade disputando espaço na via pública.",
+    "modelosObs": [
+      "Constatado veículo disputando corrida clandestina (racha) na via pública, transitando em alta velocidade lado a lado com o veículo placa [PLACA DO OUTRO VEÍCULO], gerando risco manifesto à segurança."
+    ]
+  },
+  {
+    "id": "art175",
+    "codigo": "527-40",
+    "artigo": "Art. 175",
+    "competencia": "Estadual / Detran",
+    "categoria": "CIRCULACAO",
+    "titulo": "Utilizar-se de veículo para demonstrar ou exibir manobra perigosa, mediante arrancada brusca, derrapagem ou frenagem com deslizamento de pneus",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 2.934,70",
+    "fator": "10x",
+    "infrator": "Condutor",
+    "medida": "Recolhimento da CNH e remoção do veículo",
+    "semAbordagem": "SIM (Permitida autuação sem abordagem se constatada a manobra perigosa diretamente)",
+    "obsObrigatoria": "Descrever com precisão a manobra realizada (arrancada provocando ruído/fumaça de pneus, derrapagem ou 'cavalo de pau').",
+    "modelosObs": [
+      "Condutor realizou manobra perigosa na via pública, efetuando arrancada brusca com derrapagem e rastro de pneus no pavimento, colocando em risco pedestres e demais veículos."
+    ]
+  },
+  {
+    "id": "art210",
+    "codigo": "607-60",
+    "artigo": "Art. 210",
+    "competencia": "Estadual / Detran",
+    "categoria": "CIRCULACAO",
+    "titulo": "Transpor, sem autorização, bloqueio viário policial",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x (Suspensão CNH)",
+    "infrator": "Condutor",
+    "medida": "Recolhimento do documento de habilitação e apreensão do veículo",
+    "semAbordagem": "SIM (Comum na evasão de blitz onde o condutor fura o bloqueio policial)",
+    "obsObrigatoria": "Descrever a ordem clara de parada emanada pela equipe policial/fiscalização e a transposição/evasão do ponto de bloqueio pelo veículo.",
+    "modelosObs": [
+      "Veículo evadiu-se e transpôs o bloqueio de fiscalização policial devidamente sinalizado, desobedecendo a ordem de parada emanada pelos agentes de trânsito em serviço no local."
+  ]
+  },
+  {
+    "id": "art218I",
+    "codigo": "745-50",
+    "artigo": "Art. 218, I",
+    "competencia": "Estadual / Detran",
+    "categoria": "VELOCIDADE",
+    "titulo": "Transitar em velocidade superior à máxima permitida para o local em até 20%",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Condutor / Proprietário",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Medição por equipamento medidor de velocidade / Radar aprovado)",
+    "obsObrigatoria": "Constar obrigatoriamente: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada.",
+    "modelosObs": [
+      "Medição efetuada por radar eletrônico. Velocidade Regulamentada: [60] km/h; Velocidade Medida: [69] km/h; Velocidade Considerada: [62] km/h."
+    ]
+  },
+  {
+    "id": "art218II",
+    "codigo": "746-30",
+    "artigo": "Art. 218, II",
+    "competencia": "Estadual / Detran",
+    "categoria": "VELOCIDADE",
+    "titulo": "Transitar em velocidade superior à máxima permitida em mais de 20% até 50%",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Condutor / Proprietário",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Medição efetuada por instrumento hábil)",
+    "obsObrigatoria": "Constar obrigatoriamente: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada.",
+    "modelosObs": [
+      "Medição efetuada por radar portátil/fixo. Velocidade Regulamentada: [60] km/h; Velocidade Medida: [82] km/h; Velocidade Considerada: [75] km/h."
+    ]
+  },
+  {
+    "id": "art218III",
+    "codigo": "747-10",
+    "artigo": "Art. 218, III",
+    "competencia": "Estadual / Detran",
+    "categoria": "VELOCIDADE",
+    "titulo": "Transitar em velocidade superior à máxima permitida em mais de 50%",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 880,41",
+    "fator": "3x (Suspensão CNH)",
+    "infrator": "Condutor / Proprietário",
+    "medida": "Suspensão do direito de dirigir e recolhimento da CNH",
+    "semAbordagem": "SIM (Medição por radar aprovado pelo INMETRO)",
+    "obsObrigatoria": "Constar obrigatoriamente: Velocidade Regulamentada, Velocidade Medida e Velocidade Considerada.",
+    "modelosObs": [
+      "Medição efetuada por medidor de velocidade. Velocidade Regulamentada: [60] km/h; Velocidade Medida: [105] km/h; Velocidade Considerada: [97] km/h."
+    ]
+  },
+  {
+    "id": "art230V",
+    "codigo": "659-92",
+    "artigo": "Art. 230, V",
+    "competencia": "Estadual / Detran",
+    "categoria": "VEICULO",
+    "titulo": "Conduzir veículo que não esteja registrado e devidamente licenciado",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Remoção do veículo ao depósito",
+    "semAbordagem": "SIM (Constatação de circulação em via pública com licenciamento vencido via sistema)",
+    "obsObrigatoria": "Indicar o último exercício quitado constante na consulta ao sistema de trânsito.",
+    "modelosObs": [
+      "OPÇÃO 1 (COM ABORDAGEM): Veículo abordado em circulação. Consulta ao sistema RENAVAM/DETRAN constatou licenciamento atrasado, sendo o último exercício quitado o ano de [2022]. Veículo recolhido ao pátio oficial sob CRV nº [Nº].",
+      "OPÇÃO 2 (SEM ABORDAGEM): Autuação sem abordagem por estar o veículo em movimento intenso e não haver condições de segurança para interceptação. Licenciamento pendente (último exercício: [2021])."
+    ]
+  },
+  {
+    "id": "art230VII",
+    "codigo": "661-02",
+    "artigo": "Art. 230, VII",
+    "competencia": "Estadual / Detran",
+    "categoria": "VEICULO",
+    "titulo": "Conduzir o veículo com a cor ou característica alterada",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Retenção do veículo para regularização",
+    "semAbordagem": "SIM (Desde que a alteração seja visível sem margem de dúvida)",
+    "obsObrigatoria": "Detalhamento pormenorizado da alteração constatada no veículo sem o devido registro no CRLV.",
+    "modelosObs": [
+      "OPÇÃO 1 (SUSPENSÃO REBAIXADA): Veículo transitando com sistema de suspensão alterado (rebaixado/fixa/rosca/ar), com distância do centro do cubo de roda ao para-lama de [X] cm, sem CSV/observação no CRLV.",
+      "OPÇÃO 2 (ILUMINAÇÃO LED/XENON): Veículo equipado com lâmpadas do sistema de iluminação principal alteradas para tecnologia LED/Xenon não originais de fábrica, em desacordo com a Resolução CONTRAN.",
+      "OPÇÃO 3 (COR DIVERSA / ENVELOPAMENTO): Veículo com cor predominantemente alterada para [NOVA COR] via envoltório adesivo/pintura (cobrindo mais de 50% do veículo), divergindo da cor [COR ORIGINAL] constante no licenciamento.",
+      "OPÇÃO 4 (ESCAPAMENTO / SISTEMA DE EXAUSTÃO): Veículo transitando com alteração no sistema de exaustão/escapamento (aberto/direto/sem silenciador intermediário), alterando suas características originais de fábrica."
+    ]
+  },
+  {
+    "id": "art230XVIII",
+    "codigo": "672-61",
+    "artigo": "Art. 230, XVIII",
+    "competencia": "Estadual / Detran",
+    "categoria": "VEICULO",
+    "titulo": "Conduzir o veículo em mau estado de conservação, comprometendo a segurança",
+    "gravidade": "Grave",
+    "pontos": 5,
+    "valor": "R$ 195,23",
+    "fator": "1x",
+    "infrator": "Proprietário",
+    "medida": "Retenção do veículo para regularização",
+    "semAbordagem": "NÃO (Exige fiscalização visual detalhada pelo agente no local)",
+    "obsObrigatoria": "Descrever detalhadamente a falha de conservação (ex: pneus desgastados além do indicador TWI/no arame, para-brisa trincado no campo de visão, iluminação traseira inoperante).",
+    "modelosObs": [
+      "OPÇÃO 1 (PNEU CARECA): Veículo transitando com os pneus [DIANTEIRO DIREITO / TRASEIRO ESQUERDO] em mau estado de conservação, com desgaste da banda de rodagem além do indicador TWI (pneu careca/no arame).",
+      "OPÇÃO 2 (PARA-BRISA TRINCADO): Para-brisa com trinca/fratura na área de visão crítica do condutor superior a [X] cm, comprometendo a visibilidade e a segurança viária."
+    ]
+  },
+  {
+    "id": "art244I",
+    "codigo": "703-01",
+    "artigo": "Art. 244, I",
+    "competencia": "Estadual / Detran",
+    "categoria": "MOTOCICLETA",
+    "titulo": "Conduzir motocicleta, motoneta ou ciclomotor sem usar capacete de segurança ou com viseira/óculos fora do padrão",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x (Suspensão CNH)",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até regularização e recolhimento da CNH",
+    "semAbordagem": "SIM (Permitida autuação sem abordagem por constatação visual)",
+    "obsObrigatoria": "Descrever a Irregularidade (ausência total do capacete, viseira levantada no período noturno, ausência de óculos de proteção homologado ou capacete não fixado pela cinta jugular).",
+    "modelosObs": [
+      "OPÇÃO 1 (SEM CAPACETE): Condutor transitava em via pública conduzindo motocicleta sem fazer uso do capacete de segurança.",
+      "OPÇÃO 2 (VISEIRA LEVANTADA / SEM ÓCULOS): Condutor transitava com capacete de segurança, porém com a viseira totalmente levantada durante o deslocamento na via pública, sem óculos de proteção."
+    ]
+  },
+  {
+    "id": "art244IV",
+    "codigo": "706-40",
+    "artigo": "Art. 244, IV",
+    "competencia": "Estadual / Detran",
+    "categoria": "MOTOCICLETA",
+    "titulo": "Conduzir motocicleta, motoneta ou ciclomotor com os faróis apagados",
+    "gravidade": "Média",
+    "pontos": 4,
+    "valor": "R$ 130,16",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Constatação visual direta do veículo em movimento com farol inoperante/apagado)",
+    "obsObrigatoria": "Registrar que a motocicleta transitava em via pública com o farol dianteiro apagado durante o deslocamento.",
+    "modelosObs": [
+      "Autuação sem abordagem. Constatado condutor em deslocamento na via pública com o sistema de iluminação do farol dianteiro da motocicleta totalmente apagado."
+    ]
+  },
+  {
+    "id": "art244V",
+    "codigo": "707-20",
+    "artigo": "Art. 244, V",
+    "competencia": "Estadual / Detran",
+    "categoria": "MOTOCICLETA",
+    "titulo": "Conduzir motocicleta, motoneta ou ciclomotor transportando criança menor de 10 anos ou sem condições de cuidar de sua própria segurança",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x (Suspensão CNH)",
+    "infrator": "Condutor",
+    "medida": "Retenção do veículo até a regularização e recolhimento da CNH",
+    "semAbordagem": "NÃO (Exige verificação/confirmação da idade da criança abordada)",
+    "obsObrigatoria": "Registrar a idade da criança transportada na garupa e a ausência do apoio dos pés nos estribos.",
+    "modelosObs": [
+      "Condutor abordado transportando na garupa da motocicleta criança de [X] anos de idade, incapaz de firmar os pés nos estribos laterais e de zelar por sua própria segurança."
+    ]
+  },
+  {
+    "id": "art252VI",
+    "codigo": "763-32",
+    "artigo": "Art. 252, parágrafo único",
+    "competencia": "Estadual / Detran",
+    "categoria": "CONDUTOR",
+    "titulo": "Dirigir veículo segurando ou manuseando telefone celular",
+    "gravidade": "Gravíssima",
+    "pontos": 7,
+    "valor": "R$ 293,47",
+    "fator": "1x",
+    "infrator": "Condutor",
+    "medida": "Nenhuma",
+    "semAbordagem": "SIM (Perfeitamente cabível a autuação sem abordagem devido à fluidez do trânsito)",
+    "obsObrigatoria": "Especificar detalhadamente a conduta visualizada (segurando com a mão esquerda/direita ou manuseando/digitando mensagens no aparelho).",
+    "modelosObs": [
+      "Autuação sem abordagem devido ao fluxo de trânsito na via. Observado condutor segurando telefone celular com a mão esquerda na altura do rosto enquanto conduzia o veículo.",
+      "Condutor manuseava e digitava mensagens no telefone celular posicionado sobre o volante enquanto aguardava o sinal semafórico."
+    ]
+  }
+]
