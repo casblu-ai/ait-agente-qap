@@ -1,1 +1,35 @@
+{
+  "metadata": {
+    "id": "165",
+    "version": "1.0.0",
+    "status": "ATIVO"
+  },
 
+  "identificacao": {
+    "codigo": "516-91",
+    "artigo": "165"
+  },
+
+  "infracao": {
+    "titulo": "Dirigir sob influência de álcool",
+    "categoria": "ALCOOLEMIA"
+  },
+
+  "penalidade": {
+    "gravidade": "GRAVISSIMA",
+    "pontos": 7,
+    "valor": 2934.70
+  },
+
+  "competencia": [
+    "DETRAN",
+    "PM",
+    "PRF"
+  ],
+
+  "palavrasChave": [
+    "alcool",
+    "embriaguez",
+    "etilometro"
+  ]
+}
