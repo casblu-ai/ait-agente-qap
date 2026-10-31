@@ -1,1 +1,7 @@
+{
+  "schema":"BNI-AIT-1.0",
 
+  "infracoes":[
+    "165.json"
+  ]
+}
