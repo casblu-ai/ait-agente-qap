@@ -149,9 +149,12 @@
     <main class="flex-1 max-w-screen-2xl w-full mx-auto p-4 space-y-4">
 
         <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS -->
-        <<section id="tab-search" class="tab-content space-y-4">
+        
+            
+                
+<section id="tab-search" class="tab-content space-y-4">
 
-    <!-- Estrutura responsiva dos três painéis -->
+    <!-- ESTRUTURA DOS TRES PAINEIS -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
 
         <!-- PAINEL ESQUERDO: PESQUISA E FILTROS -->
@@ -162,11 +165,39 @@
                 Pesquisar enquadramentos
             </h2>
 
+            <div class="space-y-2">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, celular, rebaixado..."
+                        class="w-full pl-10 pr-10 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm font-medium">
+                    <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                        <i class="fa-solid fa-circle-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="flex flex-col gap-2 text-xs">
+                    <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-2 rounded-lg btn-detran-primary border border-black text-left">Todos</button>
+                    <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-2 rounded-lg bg-white border border-slate-300 font-bold text-left">Alcoolemia</button>
+                    <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-2 rounded-lg bg-white border border-slate-300 font-bold text-left">CNH / Condutor</button>
+                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-2 rounded-lg bg-white border border-slate-300 font-bold text-left">Veículo / Alterações</button>
+                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-2 rounded-lg bg-white border border-slate-300 font-bold text-left">Estacionamento</button>
+                    <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-2 rounded-lg bg-white border border-amber-400 text-amber-600 font-bold text-left">
+                        <i class="fa-solid fa-star mr-1"></i> Favoritos
+                    </button>
+                </div>
+            </div>
+
         </aside>
 
-        <!-- PAINEL CENTRAL: DADOS DA INFRAÇÃO -->
+        <!-- PAINEL CENTRAL: ENQUADRAMENTOS -->
         <div id="painel-infracao" class="lg:col-span-5 min-w-0 space-y-4">
+            <h2 class="font-black text-sm text-slate-900">
+                <i class="fa-solid fa-book-bookmark mr-2 text-amber-500"></i>
+                Enquadramentos encontrados
+            </h2>
 
+            <div id="infractionsList" class="space-y-3"></div>
         </div>
 
         <!-- PAINEL DIREITO: APOIO AO AIT -->
@@ -181,9 +212,7 @@
                 Selecione um enquadramento para consultar as informações e preparar sua minuta.
             </p>
 
-            <button
-                type="button"
-                onclick="switchTab('tab-ait')"
+            <button type="button" onclick="switchTab('tab-ait')"
                 class="w-full py-2.5 btn-detran-primary border border-black rounded-lg text-xs font-black">
                 <i class="fa-solid fa-pen-to-square mr-1"></i>
                 Abrir rascunho do AIT
@@ -192,30 +221,8 @@
         </aside>
 
     </div>
-            <div class="space-y-2">
-                <div class="relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar por código, artigo, celular, rebaixado..."
-                        class="w-full pl-10 pr-10 py-3 bg-white border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm font-medium">
-                    <button id="clearSearch" onclick="clearSearchInput()" class="hidden absolute right-3 top-3 text-slate-400 hover:text-slate-600">
-                        <i class="fa-solid fa-circle-xmark text-lg"></i>
-                    </button>
-                </div>
+</section>
 
-                <!-- Botões de Categoria -->
-                <div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
-                    <button onclick="filterCategory('TODOS')" class="cat-btn px-3 py-1.5 rounded-lg btn-detran-primary border border-black whitespace-nowrap shadow-sm">Todos</button>
-                    <button onclick="filterCategory('ALCOOLEMIA')" class="cat-btn px-3 py-1.5 rounded-lg bg-white border border-slate-300 font-bold whitespace-nowrap">Alcoolemia</button>
-                    <button onclick="filterCategory('CONDUTOR')" class="cat-btn px-3 py-1.5 rounded-lg bg-white border border-slate-300 font-bold whitespace-nowrap">CNH / Condutor</button>
-                    <button onclick="filterCategory('VEICULO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white border border-slate-300 font-bold whitespace-nowrap">Veículo / Alterações</button>
-                    <button onclick="filterCategory('ESTACIONAMENTO')" class="cat-btn px-3 py-1.5 rounded-lg bg-white border border-slate-300 font-bold whitespace-nowrap">Estacionamento</button>
-                    <button onclick="filterCategory('FAVORITOS')" class="cat-btn px-3 py-1.5 rounded-lg bg-white border border-amber-400 text-amber-600 font-bold whitespace-nowrap"><i class="fa-solid fa-star"></i> Favoritos</button>
-                </div>
-            </div>
-
-            <!-- Lista de Enquadramentos -->
-            <div id="infractionsList" class="space-y-3"></div>
-        </section>
 
         <!-- ABA 2: RASCUNHO E MINUTA DE AIT -->
         <section id="tab-ait" class="tab-content hidden space-y-4">
