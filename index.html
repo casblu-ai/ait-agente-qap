@@ -149,7 +149,49 @@
     <main class="flex-1 max-w-screen-2xl w-full mx-auto p-4 space-y-4">
 
         <!-- ABA 1: CONSULTA DE ENQUADRAMENTOS -->
-        <section id="tab-search" class="tab-content space-y-4">
+        <<section id="tab-search" class="tab-content space-y-4">
+
+    <!-- Estrutura responsiva dos três painéis -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+
+        <!-- PAINEL ESQUERDO: PESQUISA E FILTROS -->
+        <aside id="painel-pesquisa" class="lg:col-span-3 bg-white p-4 rounded-xl border border-slate-300 shadow-sm space-y-4">
+
+            <h2 class="font-black text-sm text-slate-900">
+                <i class="fa-solid fa-magnifying-glass mr-2 text-amber-500"></i>
+                Pesquisar enquadramentos
+            </h2>
+
+        </aside>
+
+        <!-- PAINEL CENTRAL: DADOS DA INFRAÇÃO -->
+        <div id="painel-infracao" class="lg:col-span-5 min-w-0 space-y-4">
+
+        </div>
+
+        <!-- PAINEL DIREITO: APOIO AO AIT -->
+        <aside id="painel-apoio-ait" class="lg:col-span-4 bg-white p-4 rounded-xl border border-slate-300 shadow-sm space-y-4">
+
+            <h2 class="font-black text-sm text-slate-900">
+                <i class="fa-solid fa-file-pen mr-2 text-amber-500"></i>
+                Apoio ao preenchimento do AIT
+            </h2>
+
+            <p class="text-xs text-slate-600">
+                Selecione um enquadramento para consultar as informações e preparar sua minuta.
+            </p>
+
+            <button
+                type="button"
+                onclick="switchTab('tab-ait')"
+                class="w-full py-2.5 btn-detran-primary border border-black rounded-lg text-xs font-black">
+                <i class="fa-solid fa-pen-to-square mr-1"></i>
+                Abrir rascunho do AIT
+            </button>
+
+        </aside>
+
+    </div>
             <div class="space-y-2">
                 <div class="relative">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
