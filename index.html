@@ -328,7 +328,7 @@
         let favorites = JSON.parse(localStorage.getItem('ait_favorites')) || [];
         let drafts = JSON.parse(localStorage.getItem('ait_drafts')) || [];
 
-        async function loadInfractions(competencia = 'TODOS') {
+       async function loadInfractions(competencia = 'TODOS') {
   try {
     let infractions = [];
 
@@ -367,6 +367,27 @@
   }
 }
 
+        // Função para padronizar qualquer objeto de infração para o formato BNI-AIT
+function normalizarInfracao(item) {
+  if (!item) return null;
+
+  return {
+    codigo: item.codigo || item.identificacao?.codigo || 'N/A',
+    artigo: item.artigo || item.identificacao?.artigo || 'N/A',
+    titulo: item.titulo || item.infracao?.titulo || 'Sem título',
+    descricao: item.descricao || item.infracao?.descricao || '',
+    gravidade: item.gravidade || item.enquadramento?.gravidade || 'N/A',
+    pontos: item.pontos ?? item.enquadramento?.pontos ?? 0,
+    valor: item.valor || item.enquadramento?.valor || 'R$ 0,00',
+    fator: item.fator || item.enquadramento?.fator || '1x',
+    infrator: item.infrator || item.enquadramento?.infrator || 'Condutor/Proprietário',
+    medidaAdministrativa: item.medidaAdministrativa || item.procedimento?.medidaAdministrativa || 'Nenhuma',
+    observacaoMBFT: item.observacaoMBFT || item.mbft?.observacao || '',
+    autuacaoSemAbordagem: item.autuacaoSemAbordagem ?? item.procedimento?.autuacaoSemAbordagem ?? false,
+    palavrasChave: item.palavrasChave || item.tags || []
+  };
+}
+        
         function switchCompetencia(val) {
             currentCompetencia = val;
             localStorage.setItem('ait_competencia_pref', val);
