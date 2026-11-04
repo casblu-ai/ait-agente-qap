@@ -328,30 +328,44 @@
         let favorites = JSON.parse(localStorage.getItem('ait_favorites')) || [];
         let drafts = JSON.parse(localStorage.getItem('ait_drafts')) || [];
 
-        async function loadInfractions(competencia) {
-            let jsonFile = './infracoes_estadual.json';
-            
-            if (competencia === 'MUNICIPAL') {
-                jsonFile = './infracoes_municipal.json';
-            } else if (competencia === 'TODOS') {
-                jsonFile = './infracoes.json';
-            }
+        async function loadInfractions(competencia = 'TODOS') {
+  try {
+    let infractions = [];
 
-            try {
-                const response = await fetch(jsonFile);
-                if (response.ok) {
-                    database = await response.json();
-                } else {
-                    const fallback = await fetch('./infracoes.json');
-                    if (fallback.ok) database = await fallback.json();
-                }
-            } catch (error) {
-                console.error('Falha ao carregar a base de infrações:', error);
-            }
+    if (competencia === 'ESTADUAL') {
+      const res = await fetch('./infracoes_estadual.json');
+      infractions = await res.json();
+    } else if (competencia === 'MUNICIPAL') {
+      const res = await fetch('./infracoes_municipal.json');
+      infractions = await res.json();
+    } else {
+      // Competência 'TODOS': Carrega as duas bases simultaneamente
+      const [resEstadual, resMunicipal] = await Promise.all([
+        fetch('./infracoes_estadual.json').catch(() => null),
+        fetch('./infracoes_municipal.json').catch(() => null)
+      ]);
 
-            renderInfractions();
-            populateAITSelect();
+      const dataEstadual = resEstadual && resEstadual.ok ? await resEstadual.json() : [];
+      const dataMunicipal = resMunicipal && resMunicipal.ok ? await resMunicipal.json() : [];
+
+      // Unifica as bases eliminando duplicados pelo código do enquadramento
+      const mapConsolidado = new Map();
+      [...dataEstadual, ...dataMunicipal].forEach(item => {
+        const chave = item.codigo || (item.identificacao && item.identificacao.codigo);
+        if (chave && !mapConsolidado.has(chave)) {
+          mapConsolidado.set(chave, item);
         }
+      });
+
+      infractions = Array.from(mapConsolidado.values());
+    }
+
+    return infractions;
+  } catch (error) {
+    console.error('Erro ao carregar a base de infrações:', error);
+    return [];
+  }
+}
 
         function switchCompetencia(val) {
             currentCompetencia = val;
