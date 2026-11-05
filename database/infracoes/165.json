@@ -15,6 +15,20 @@
     "categoria": "ALCOOLEMIA"
   },
 
+  "ctb": {
+    "texto": "Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa que determine dependência."
+  },
+
+  "mbft": {
+    "autuacaoSemAbordagem": false,
+    "orientacao": "Infração caracterizada conforme disposições do MBFT."
+  },
+
+  "minutas": [
+    "Condutor submetido ao teste de etilômetro, sendo constatada concentração alcoólica superior ao limite regulamentar.",
+    "Condutor apresentando sinais de alteração da capacidade psicomotora observados durante fiscalização."
+  ],
+
   "penalidade": {
     "gravidade": "GRAVISSIMA",
     "pontos": 7,
